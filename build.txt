@@ -1,0 +1,4 @@
+displayName = Endless Continuum
+author = Moonseer
+version = 0.1
+modReferences = StructureHelper, SubworldLibrary

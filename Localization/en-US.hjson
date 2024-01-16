@@ -1,0 +1,345 @@
+Mods: {
+	EndlessContinuum: {
+		Bestiary: {
+			#Enemies
+			GnawyrmHead: A wyvern-like creature with an insatiable apetite.
+			Lighthunter: A small ringlight searching for light to bring back to its homeworld.
+			Myrdenfeeder: Sentient plants that kill enemies with spores of light, and then feed on their bodies.
+			Myrdenflyer: VERY angry bat-like creatures.
+			Myrdenspire: A piece of foliage emitting a ray of light to hunt down prey.
+			Myrdentrapper: A mother flower trying to spread its kind all over the island it resides on.
+			Myrdenwalker: Residents of myrdensaw that don't now how to fly, so they try to strike down anything not on the ground.
+			Myrdenwatcher: Creatures that try to stay away from their prey and kill them with sparks of light.
+		}
+
+		Biomes: {
+			AbyssalMinesBiome: {
+				DisplayName: Abyssal Mines
+				TownNPCDialogueName: the Abyssal Mines Biome
+			}
+
+			MyrdenshawBiome: {
+				DisplayName: Myrdenshaw
+				TownNPCDialogueName: the Myrdenshaw Biome
+			}
+
+			SeaOfStarsBiome: {
+				DisplayName: Sea Of Stars Biome
+				TownNPCDialogueName: the Sea Of Stars Biome
+			}
+		}
+
+		Buffs: {
+			#Debuffs
+			AeriumShatter: {
+				DisplayName: Aerium Shatter
+				Description: Increases damage from melee damage projectiles
+			}
+		}
+
+		Items: {
+			#Materials
+			Lightspores: {
+				DisplayName: Lightspores
+				Tooltip: ""
+			}
+
+			Myrdenfibers: {
+				Tooltip: ""
+				DisplayName: Myrdenfibers
+			}
+
+			MyrdenshellShards: {
+				DisplayName: Myrdenshell Shards
+				Tooltip: ""
+			}
+
+			#Misc
+			AbyssalMinesPylonCrystal: {
+				DisplayName: Abyssal Mines Pylon Crystal
+				Tooltip: Can be placed on an Abyssal Mines Pylon Base to complete it, allowing access to the Abyssal Mines
+			}
+
+			MyrdenshawPylonCrystal: {
+				DisplayName: Myrdenshaw Pylon Crystal
+				Tooltip: Can be placed on an Myrdenshaw Pylon Base to complete it, allowing access to Myrdenshaw
+			}
+
+			#Test
+			EnterAbyssalMines: {
+				DisplayName: Enter Abyssal Mines
+				Tooltip: ""
+			}
+
+			EnterMyrdenshaw: {
+				DisplayName: Enter Myrdenshaw
+				Tooltip: ""
+			}
+
+			EnterWylderthern: {
+				DisplayName: Enter Wylderthern
+				Tooltip: ""
+			}
+
+			#Tiles
+			AbyssalBeam: {
+				DisplayName: Abyssal Beam
+				Tooltip: ""
+			}
+
+			AbyssalDirt: {
+				DisplayName: Abyssal Dirt
+				Tooltip: ""
+			}
+
+			AbyssalDirtWall: {
+				DisplayName: Abyssal Dirt Wall
+				Tooltip: ""
+			}
+
+			AbyssalGrassSeeds: {
+				DisplayName: Abyssal Grass Seeds
+				Tooltip: ""
+			}
+
+			AbyssalMinesPylon: {
+				DisplayName: Abyssal Mines Pylon
+				Tooltip: ""
+			}
+
+			AbyssalStone: {
+				DisplayName: Abyssal Stone
+				Tooltip: ""
+			}
+
+			AbyssalStoneWall: {
+				DisplayName: Abyssal Stone Wall
+				Tooltip: ""
+			}
+
+			AbyssalStoneBrick: {
+				DisplayName: Abyssal Stone Brick
+				Tooltip: ""
+			}
+
+			AbyssalStoneBrickWall: {
+				DisplayName: Abyssal Stone Brick Wall
+				Tooltip: ""
+			}
+
+			AbyssalStoneSlab: {
+				DisplayName: Abyssal Stone Slab
+				Tooltip: ""
+			}
+
+			AbyssalStoneSlabWall: {
+				DisplayName: Abyssal Stone Slab Wall
+				Tooltip: ""
+			}
+
+			AeriumBar: {
+				DisplayName: Aerium Bar
+				Tooltip: ""
+			}
+
+			AeriumOre: {
+				DisplayName: Aerium Chunk
+				Tooltip: ""
+			}
+
+			ArchaicStone: {
+				DisplayName: Archaic Stone
+				Tooltip: ""
+			}
+
+			ArchaicStoneBrick: {
+				DisplayName: Archaic Stone Brick
+				Tooltip: ""
+			}
+
+			ArchaicStoneBrickWall: {
+				DisplayName: Archaic Stone Brick Wall
+				Tooltip: ""
+			}
+
+			CosmicGrassSeeds: {
+				DisplayName: Cosmic Grass Seeds
+				Tooltip: ""
+			}
+
+			CosmicRock: {
+				DisplayName: Cosmic Rock
+				Tooltip: ""
+			}
+
+			CosmicRockWall: {
+				DisplayName: Cosmic Rock Wall
+				Tooltip: ""
+			}
+
+			CosmicSoil: {
+				DisplayName: Cosmic Soil
+				Tooltip: ""
+			}
+
+			CosmicSoilWall: {
+				DisplayName: Cosmic Soil Wall
+				Tooltip: ""
+			}
+
+			Myrdenbrick: {
+				DisplayName: Myrdenbrick
+				Tooltip: ""
+			}
+
+			MyrdenbrickWall: {
+				DisplayName: Myrdenbrick Wall
+				Tooltip: ""
+			}
+
+			Myrdencore: {
+				DisplayName: Myrdencore
+				Tooltip: ""
+			}
+
+			Myrdendirt: {
+				DisplayName: Myrdendirt
+				Tooltip: ""
+			}
+
+			MyrdendirtWall: {
+				DisplayName: Myrdendirt Wall
+				Tooltip: ""
+			}
+
+			MyrdengrassSeeds: {
+				DisplayName: Myrdengrass Seeds
+				Tooltip: ""
+			}
+
+			MyrdenshawPylon: {
+				DisplayName: Myrdenshaw Pylon
+				Tooltip: ""
+			}
+
+			Myrdenstone: {
+				DisplayName: Myrdenstone
+				Tooltip: ""
+			}
+
+			MyrdenstoneBrick: {
+				DisplayName: Myrdenstone Brick
+				Tooltip: ""
+			}
+
+			MyrdenstoneBrickWall: {
+				DisplayName: Myrdenstone Brick Wall
+				Tooltip: ""
+			}
+
+			MyrdenstoneWall: {
+				DisplayName: Myrdenstone Wall
+				Tooltip: ""
+			}
+
+			Myrdenwood: {
+				DisplayName: Myrdenwood
+				Tooltip: ""
+			}
+
+			MyrdenwoodWall: {
+				DisplayName: Myrdenwood Wall
+				Tooltip: ""
+			}
+
+			SoulForge: {
+				DisplayName: Soul Forge
+				Tooltip: Used to craft items using holy silver
+			}
+
+			SurgestoneBar: {
+				DisplayName: Surgestone Bar
+				Tooltip: ""
+			}
+
+			SurgestoneOre: {
+				DisplayName: Surgestone
+				Tooltip: ""
+			}
+
+			WildDirt: {
+				DisplayName: Wild Dirt
+				Tooltip: ""
+			}
+
+			WildDirtWall: {
+				DisplayName: Wild Dirt Wall
+				Tooltip: ""
+			}
+
+			WildGrassSeeds: {
+				DisplayName: Wild Grass Seeds
+				Tooltip: ""
+			}
+
+			WildStone: {
+				DisplayName: Wild Stone
+				Tooltip: ""
+			}
+
+			WildStoneWall: {
+				DisplayName: Wild Stone Wall
+				Tooltip: ""
+			}
+
+			#Weapons
+			AeriumFlyer: {
+				DisplayName: Aerium Flyer
+				Tooltip: Hits will cause light boomerangs to fire out
+			}
+
+			AeriumWarhammer: {
+				DisplayName: Aerium Warhammer
+				Tooltip: Hits inflict Aerium Shatter, which increases damage from melee projectiles
+			}
+
+			EnterSeaOfStars: {
+				DisplayName: Enter Sea Of Stars
+				Tooltip: ""
+			}
+		}
+
+		NPCs: {
+			#Enemies
+			GnawyrmBody.DisplayName: Gnawyrm
+			GnawyrmHead.DisplayName: Gnawyrm
+			GnawyrmTail.DisplayName: Gnawyrm
+			Lighthunter.DisplayName: Lighthunter
+			Myrdenfeeder.DisplayName: Myrdenfeeder
+			Myrdenflyer.DisplayName: Myrdenflyer
+			Myrdenspire.DisplayName: Myrdenspire
+			Myrdentrapper.DisplayName: Myrdentrapper
+			Myrdenwalker.DisplayName: Myrdenwalker
+			Myrdenwatcher.DisplayName: Myrdenwatcher
+		}
+
+		Projectiles: {
+			#Friendly
+			AeriumFlyerLight.DisplayName: Aerium Light
+			AeriumFlyerProj.DisplayName: Aerium Flyer
+			LighthunterWing.DisplayName: ""
+		}
+
+		Tiles: {
+			#Blocks
+			AeriumOreTile.MapEntry: "{$Mods.EndlessContinuum.Items.AeriumOre.DisplayName}"
+			SurgestoneOreTile.MapEntry: "{$Mods.EndlessContinuum.Items.SurgestoneOre.DisplayName}"
+			#Foliage
+			MyrdenSapling.MapEntry: Myrdenshaw Sapling
+			#Furniture
+			AbyssalMinesPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.AbyssalMinesPylon.DisplayName}"
+			MyrdenshawPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenshawPylon.DisplayName}"
+			SoulForgeTile.MapEntry: "{$Mods.EndlessContinuum.Items.SoulForge.DisplayName}"
+		}
+	}
+}
