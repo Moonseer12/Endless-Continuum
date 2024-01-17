@@ -142,6 +142,16 @@ Mods: {
 				Tooltip: ""
 			}
 
+			AeriumBrick: {
+				DisplayName: Aerium Brick
+				Tooltip: ""
+			}
+
+			AeriumBrickWall: {
+				DisplayName: Aerium Brick Wall
+				Tooltip: ""
+			}
+
 			AeriumOre: {
 				DisplayName: Aerium Chunk
 				Tooltip: ""

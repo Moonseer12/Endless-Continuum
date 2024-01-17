@@ -12,7 +12,7 @@ namespace EndlessContinuum.Content.Items.Weapons
         public override void SetStaticDefaults() => this.SetResearch();
         public override void SetDefaults()
         {
-            Item.Size = new Vector2(32, 54);
+            Item.Size = new Vector2(16, 34);
             Item.rare = ItemRarityID.Pink;
             Item.value = Item.sellPrice(0, 5, 0, 0);
             Item.damage = 70;
@@ -40,7 +40,7 @@ namespace EndlessContinuum.Content.Items.Weapons
 		public override string Texture => ECAssets.ItemsPath + "AeriumFlyer";
 		public override void SetDefaults()
 		{
-			Projectile.Size = new Vector2(32, 32);
+			Projectile.Size = new Vector2(16, 34);
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Melee;
             Projectile.aiStyle = 3;
@@ -63,7 +63,7 @@ namespace EndlessContinuum.Content.Items.Weapons
         public override string Texture => ECAssets.ProjectilesPath + "AeriumFlyerLight";
         public override void SetDefaults()
         {
-            Projectile.Size = new Vector2(32, 32);
+            Projectile.Size = new Vector2(16, 34);
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.DamageType = DamageClass.Melee;
@@ -74,7 +74,6 @@ namespace EndlessContinuum.Content.Items.Weapons
         public override void AI()
         {
             Projectile.rotation += 0.2f;
-            //Projectile.velocity = 10f;
             AeriumFlyerHome++;
             if (AeriumFlyerHome > 20)
             {
