@@ -23,27 +23,23 @@ namespace EndlessContinuum.Content.Items.Weapons
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
         }
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) => target.AddBuff(ModContent.BuffType<AeriumShatter>(), 300);
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) => target.GetGlobalNPC<AeriumShatterNPC>().AeriumShatter = 600;
         public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddTile<Tiles.SoulForgeTile>().Register();
-    }
-
-    class AeriumShatter : ModBuff
-    {
-        public override string Texture => ECAssets.BuffsPath + "AeriumShatter";
-        public override void SetStaticDefaults()
-        {
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = true;
-            Main.buffNoSave[Type] = true;
-        }
     }
 
     class AeriumShatterNPC : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
+        public int AeriumShatter = 0;
         public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
         {
-            if (modifiers.DamageType.CountsAsClass(DamageClass.Melee) && npc.HasBuff<AeriumShatter>())
+            if (modifiers.DamageType.CountsAsClass(DamageClass.Melee) && AeriumShatter > 0)
                 modifiers.SourceDamage *= 1.5f;
+        }
+        public override void PostAI(NPC npc)
+        {
+            if (AeriumShatter > 0)
+                AeriumShatter--;
         }
     }
 }
