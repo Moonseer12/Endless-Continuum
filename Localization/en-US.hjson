@@ -320,7 +320,7 @@ Mods: {
 
 			AeriumWhip: {
 				DisplayName: Aerium Whip
-				Tooltip: 
+				Tooltip:
 					'''
 					10 summon tag damage
 					Your summons will focus struck enemies
