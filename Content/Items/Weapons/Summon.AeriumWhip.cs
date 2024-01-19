@@ -113,9 +113,7 @@ namespace EndlessContinuum.Content.Items.Weapons
 			if (projectile.npcProj || projectile.trap || !projectile.IsMinionOrSentryRelated)
 				return;
 			if (AeriumWhipDebuff > 0)
-			{
 				modifiers.FlatBonusDamage += 10 * ProjectileID.Sets.SummonTagDamageMultiplier[projectile.type];
-			}
 		}
 		public override void PostAI(NPC npc)
 		{
@@ -177,7 +175,7 @@ namespace EndlessContinuum.Content.Items.Weapons
 			Projectile.ignoreWater = true;
 			Projectile.light = 1f;
 			Projectile.tileCollide = false;
-			Projectile.timeLeft = 600;
+			Projectile.timeLeft = 120;
 		}
 		public override void AI()
 		{

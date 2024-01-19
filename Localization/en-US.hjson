@@ -45,8 +45,8 @@ Mods: {
 			}
 
 			Myrdenfibers: {
-				Tooltip: ""
 				DisplayName: Myrdenfibers
+				Tooltip: ""
 			}
 
 			MyrdenshellShards: {
@@ -313,6 +313,11 @@ Mods: {
 				Tooltip: Hits will cause light boomerangs to fire out
 			}
 
+			AeriumRod: {
+				DisplayName: Aerium Rod
+				Tooltip: Summons an Aerium Sigil that fires out Aerium Crystals
+			}
+
 			AeriumWarhammer: {
 				DisplayName: Aerium Warhammer
 				Tooltip: Hits inflict Aerium Shatter, which increases damage from melee projectiles
@@ -347,8 +352,10 @@ Mods: {
 			#Friendly
 			AeriumCrystal.DisplayName: Aerium Crystal
 			AeriumFlyerLight.DisplayName: Aerium Light
-			AeriumFlyerProj.DisplayName: Aerium Flyer
-			AeriumWhipProjectile.DisplayName: Aerium Whip
+			AeriumFlyerProj.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumFlyer.DisplayName}"
+			AeriumSigil.DisplayName: Aerium Sigil
+			AeriumSigilCrystal.DisplayName: "{$Mods.EndlessContinuum.Projectiless.AeriumCrystal.DisplayName}"
+			AeriumWhipProjectile.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumWhip.DisplayName}"
 			LighthunterWing.DisplayName: ""
 		}
 
