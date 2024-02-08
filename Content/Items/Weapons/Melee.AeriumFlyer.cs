@@ -32,7 +32,7 @@ namespace EndlessContinuum.Content.Items.Weapons
             Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI, 0f, 0f);
             return true;
         }
-        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddTile<Tiles.SoulForgeTile>().Register();
+        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddIngredient<Materials.MyrdenshellShards>(10).AddTile<Tiles.SoulForgeTile>().Register();
     }
 
 	class AeriumFlyerProj : ModProjectile

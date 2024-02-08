@@ -19,7 +19,7 @@ namespace EndlessContinuum.Content.Items.Weapons
             Item.value = Item.sellPrice(0, 5, 0, 0);
         }
         public override bool MeleePrefix() => true;
-        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddTile<Tiles.SoulForgeTile>().Register();
+        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddIngredient<Materials.MyrdenshellShards>(10).AddTile<Tiles.SoulForgeTile>().Register();
     }
 
 	class AeriumWhipProjectile : ModProjectile

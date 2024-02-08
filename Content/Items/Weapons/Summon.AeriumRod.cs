@@ -37,7 +37,7 @@ namespace EndlessContinuum.Content.Items.Weapons
                 }
             return false;
         }
-        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddTile<Tiles.SoulForgeTile>().Register();
+        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddIngredient<Materials.MyrdenshellShards>(10).AddTile<Tiles.SoulForgeTile>().Register();
     }
 
 	class AeriumSigil : ModProjectile

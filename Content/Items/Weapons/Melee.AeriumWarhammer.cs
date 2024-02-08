@@ -24,7 +24,7 @@ namespace EndlessContinuum.Content.Items.Weapons
             Item.autoReuse = true;
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) => target.GetGlobalNPC<AeriumShatterNPC>().AeriumShatter = 600;
-        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddTile<Tiles.SoulForgeTile>().Register();
+        public override void AddRecipes() => CreateRecipe().AddIngredient<Tiles.AeriumBar>(20).AddIngredient<Materials.MyrdenshellShards>(10).AddTile<Tiles.SoulForgeTile>().Register();
     }
 
     class AeriumShatterNPC : GlobalNPC

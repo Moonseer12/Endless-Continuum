@@ -1,5 +1,11 @@
 Mods: {
 	EndlessContinuum: {
+		ArmorSetBonus.AeriumMask:
+			'''
+			You will swap between a melee and summoner mode once every minute
+			Being in one mode will increase the damage from that mode, but decrease damage from the other
+			'''
+
 		Bestiary: {
 			#Enemies
 			GnawyrmHead: A wyvern-like creature with an insatiable apetite.
@@ -15,22 +21,32 @@ Mods: {
 		Biomes: {
 			AbyssalMinesBiome: {
 				DisplayName: Abyssal Mines
-				TownNPCDialogueName: the Abyssal Mines Biome
+				TownNPCDialogueName: the Abyssal Mines
 			}
 
 			MyrdenshawBiome: {
 				DisplayName: Myrdenshaw
-				TownNPCDialogueName: the Myrdenshaw Biome
+				TownNPCDialogueName: the Myrdenshaw
 			}
 
 			SeaOfStarsBiome: {
-				DisplayName: Sea Of Stars Biome
-				TownNPCDialogueName: the Sea Of Stars Biome
+				DisplayName: Sea of Stars
+				TownNPCDialogueName: the Sea of Stars
 			}
 		}
 
 		Buffs: {
 			#Buffs
+			AeriumArmorMelee: {
+				DisplayName: Aerium Melee Blessing
+				Description: Blesses melee and curses summoner
+			}
+
+			AeriumArmorSummon: {
+				DisplayName: Aerium Summon Blessing
+				Description: Blesses summoner and curses melee
+			}
+
 			AeriumWhipBuff: {
 				DisplayName: Aerium Blessing
 				Description: Grants your minions an extra attack
@@ -38,6 +54,34 @@ Mods: {
 		}
 
 		Items: {
+			#Armor
+			AeriumBreastplate: {
+				DisplayName: Aerium Breastplate
+				Tooltip:
+					'''
+					15% increased melee speed
+					Increases your max number of minions by 1
+					'''
+			}
+
+			AeriumLeggings: {
+				DisplayName: Aerium Leggings
+				Tooltip:
+					'''
+					10% increased melee speed
+					Increases your max number of minions by 1
+					'''
+			}
+
+			AeriumMask: {
+				DisplayName: Aerium Mask
+				Tooltip:
+					'''
+					10% increased melee speed
+					Increases your max number of minions by 1
+					'''
+			}
+
 			#Materials
 			Lightspores: {
 				DisplayName: Lightspores
