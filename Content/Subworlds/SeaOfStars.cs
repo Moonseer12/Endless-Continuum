@@ -13,7 +13,7 @@ namespace EndlessContinuum.Content.Subworlds
 {
     class EnterSeaOfStars : ModItem
     {
-        public override string Texture => "EndlessContinuum/Assets/Textures/Items/Test";
+        public override string Texture => "EndlessContinuum/Assets/Textures/Test";
         public override void SetDefaults()
         {
             Item.width = 24;

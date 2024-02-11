@@ -14,8 +14,7 @@ namespace EndlessContinuum.Content.Items.Tiles
         public override void SetDefaults()
         {
             Item.DefaultToPlaceableTile(ModContent.TileType<SurgestoneBarTile>(), 0);
-            Item.width = 46;
-            Item.height = 42;
+            Item.Size = new Vector2(30, 24);
             Item.maxStack = Item.CommonMaxStack;
             Item.rare = ItemRarityID.Pink;
             Item.value = Item.sellPrice(0, 0, 80, 0);

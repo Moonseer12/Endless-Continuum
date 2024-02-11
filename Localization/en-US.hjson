@@ -376,6 +376,11 @@ Mods: {
 					Strike enemies to grant your minions an extra attack
 					'''
 			}
+
+			ThunderStrike: {
+				DisplayName: Thunder Strike
+				Tooltip: Summons a bolt of thunder from the cursor
+			}
 		}
 
 		NPCs: {
@@ -398,9 +403,11 @@ Mods: {
 			AeriumFlyerLight.DisplayName: Aerium Light
 			AeriumFlyerProj.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumFlyer.DisplayName}"
 			AeriumSigil.DisplayName: Aerium Sigil
-			AeriumSigilCrystal.DisplayName: "{$Mods.EndlessContinuum.Projectiless.AeriumCrystal.DisplayName}"
+			AeriumSigilCrystal.DisplayName: "{$Mods.EndlessContinuum.Projectiles.AeriumCrystal.DisplayName}"
 			AeriumWhipProjectile.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumWhip.DisplayName}"
 			LighthunterWing.DisplayName: ""
+			Thunder.DisplayName: Thunder
+			ThunderHit.DisplayName: Thunder Hit
 		}
 
 		Tiles: {

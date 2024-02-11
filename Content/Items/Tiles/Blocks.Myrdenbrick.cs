@@ -17,7 +17,11 @@ namespace EndlessContinuum.Content.Items.Tiles
             Item.maxStack = Item.CommonMaxStack;
             Item.rare = ItemRarityID.Pink;
         }
-        public override void AddRecipes() => CreateRecipe().AddIngredient<MyrdenbrickWall>(4).Register();
+        public override void AddRecipes()
+        {
+            CreateRecipe(5).AddIngredient<Myrdenbrick>(5).AddIngredient<Materials.Myrdenfibers>().Register();
+            CreateRecipe().AddIngredient<MyrdenbrickWall>(4).Register();
+        }
     }
 
     class MyrdenbrickTile : ModTile
