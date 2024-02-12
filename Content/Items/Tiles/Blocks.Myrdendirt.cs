@@ -1,39 +1,27 @@
+using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EndlessContinuum.Content.Items.Tiles
-{
-	class Myrdendirt : ModItem
-	{
-        public override string Texture => ECAssets.ItemsPath + "Myrdendirt";
-        public override void SetStaticDefaults() => this.SetResearchBlock();
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<MyrdendirtTile>(), 0);
-            Item.width = 16;
-            Item.height = 16;
-            Item.maxStack = Item.CommonMaxStack;
-            Item.rare = ItemRarityID.Pink;
-        }
-        public override void AddRecipes() => CreateRecipe().AddIngredient<MyrdendirtWall>(4).Register();
-    }
+namespace EndlessContinuum.Content.Items.Tiles;
 
-    class MyrdendirtTile : ModTile
+class Myrdendirt : ModItem
+{
+    public override string Texture => ECAssets.ItemsPath + "Myrdendirt";
+    public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Pink, new Vector2(16, 16), 0, ModContent.TileType<MyrdendirtTile>());
+    public override void AddRecipes() => CreateRecipe().AddIngredient<MyrdendirtWall>(4).Register();
+}
+
+class MyrdendirtTile : ModTile
+{
+    public override string Texture => ECAssets.TilesPath + "MyrdendirtTile";
+    public override void SetStaticDefaults()
     {
-        public override string Texture => ECAssets.TilesPath + "MyrdendirtTile";
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileMerge[Type][ModContent.TileType<MyrdenstoneTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<MyrdenwoodTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<AeriumOreTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<SurgestoneOreTile>()] = true;
-            Main.tileBlockLight[Type] = true;
-            AddMapEntry(new Color(82, 70, 40));
-        }
-        public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+        QuickTile.QuickBlockTile(this, DustID.Hay, SoundID.Dig, 1f, 0, new Color(82, 70, 40));
+        QuickTile.QuickTileMerge(this, ModContent.TileType<MyrdenstoneTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<MyrdenwoodTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<AeriumOreTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<SurgestoneOreTile>());
     }
+    public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
 }

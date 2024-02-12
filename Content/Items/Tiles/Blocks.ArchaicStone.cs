@@ -1,34 +1,24 @@
+using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
-using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EndlessContinuum.Content.Items.Tiles
-{
-    class ArchaicStone : ModItem
-    {
-        public override string Texture => ECAssets.ItemsPath + "ArchaicStone";
-        public override void SetStaticDefaults() => this.SetResearchBlock();
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<ArchaicStoneTile>(), 0);
-            Item.width = 16;
-            Item.height = 16;
-            Item.maxStack = Item.CommonMaxStack;
-        }
-        //public override void AddRecipes() => CreateRecipe().AddIngredient<ArchaicStoneWall>(4).Register();
-    }
+namespace EndlessContinuum.Content.Items.Tiles;
 
-    class ArchaicStoneTile : ModTile
+class ArchaicStone : ModItem
+{
+    public override string Texture => ECAssets.ItemsPath + "ArchaicStone";
+    public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Purple, new Vector2(16, 16), 0, ModContent.TileType<ArchaicStoneTile>());
+    public override void AddRecipes() => CreateRecipe().AddIngredient<ArchaicStoneWall>(4).Register();
+}
+
+class ArchaicStoneTile : ModTile
+{
+    public override string Texture => ECAssets.TilesPath + "ArchaicStoneTile";
+    public override void SetStaticDefaults()
     {
-        public override string Texture => ECAssets.TilesPath + "ArchaicStoneTile";
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
-            Main.tileMerge[Type][ModContent.TileType<ArchaicStoneBrickTile>()] = true;
-            Main.tileBlockLight[Type] = true;
-            AddMapEntry(new Color(82, 56, 52));
-        }
-        public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+        QuickTile.QuickBlockTile(this, DustID.DynastyWood, SoundID.Tink, 10f, 300, new Color(82, 56, 52));
+        QuickTile.QuickTileMerge(this, ModContent.TileType<ArchaicStoneBrickTile>());
     }
+    public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
 }

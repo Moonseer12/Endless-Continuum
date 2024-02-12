@@ -1,35 +1,24 @@
+using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EndlessContinuum.Content.Items.Tiles
-{
-	class AbyssalDirt : ModItem
-	{
-        public override string Texture => ECAssets.ItemsPath + "AbyssalDirt";
-        public override void SetStaticDefaults() => this.SetResearchBlock();
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<AbyssalDirtTile>(), 0);
-            Item.width = 16;
-            Item.height = 16;
-            Item.maxStack = Item.CommonMaxStack;
-            Item.rare = ItemRarityID.Orange;
-        }
-        public override void AddRecipes() => CreateRecipe().AddIngredient<AbyssalDirtWall>(4).Register();
-    }
+namespace EndlessContinuum.Content.Items.Tiles;
 
-    class AbyssalDirtTile : ModTile
+class AbyssalDirt : ModItem
+{
+    public override string Texture => ECAssets.ItemsPath + "AbyssalDirt";
+    public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Green, new Vector2(16, 16), 0, ModContent.TileType<AbyssalDirtTile>());
+    public override void AddRecipes() => CreateRecipe().AddIngredient<AbyssalDirtWall>(4).Register();
+}
+
+class AbyssalDirtTile : ModTile
+{
+    public override string Texture => ECAssets.TilesPath + "AbyssalDirtTile";
+    public override void SetStaticDefaults()
     {
-        public override string Texture => ECAssets.TilesPath + "AbyssalDirtTile";
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileMerge[Type][ModContent.TileType<AbyssalStoneTile>()] = true;
-            Main.tileBlockLight[Type] = true;
-            AddMapEntry(new Color(34, 41, 77));
-        }
-        public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+        QuickTile.QuickBlockTile(this, DustID.Cobalt, SoundID.Dig, 1f, 0, new Color(34, 41, 77));
+        QuickTile.QuickTileMerge(this, ModContent.TileType<AbyssalStoneTile>());
     }
+    public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
 }

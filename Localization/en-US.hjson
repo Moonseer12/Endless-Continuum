@@ -221,6 +221,11 @@ Mods: {
 				Tooltip: ""
 			}
 
+			ArchaicStoneWall: {
+				DisplayName: Archaic Stone Wall
+				Tooltip: ""
+			}
+
 			CosmicGrassSeeds: {
 				DisplayName: Cosmic Grass Seeds
 				Tooltip: ""
@@ -326,6 +331,16 @@ Mods: {
 				Tooltip: ""
 			}
 
+			SurgestonePlating: {
+				DisplayName: Surgestone Plating
+				Tooltip: ""
+			}
+
+			SurgestonePlatingWall: {
+				DisplayName: Surgestone Plating Wall
+				Tooltip: ""
+			}
+
 			WildDirt: {
 				DisplayName: Wild Dirt
 				Tooltip: ""
@@ -348,6 +363,12 @@ Mods: {
 
 			WildStoneWall: {
 				DisplayName: Wild Stone Wall
+				Tooltip: ""
+			}
+
+			#Tools
+			MyrdenwoodHammer: {
+				DisplayName: Myrdenwood Hammer
 				Tooltip: ""
 			}
 
@@ -375,6 +396,16 @@ Mods: {
 					Your summons will focus struck enemies
 					Strike enemies to grant your minions an extra attack
 					'''
+			}
+
+			MyrdenwoodBow: {
+				DisplayName: Myrdenwood Bow
+				Tooltip: ""
+			}
+
+			MyrdenwoodSword: {
+				DisplayName: Myrdenwood Sword
+				Tooltip: ""
 			}
 
 			ThunderStrike: {
@@ -407,7 +438,7 @@ Mods: {
 			AeriumWhipProjectile.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumWhip.DisplayName}"
 			LighthunterWing.DisplayName: ""
 			Thunder.DisplayName: Thunder
-			ThunderHit.DisplayName: Thunder Hit
+			ThunderHit.DisplayName: Strike
 		}
 
 		Tiles: {

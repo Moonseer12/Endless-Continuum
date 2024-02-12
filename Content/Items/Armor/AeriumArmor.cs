@@ -1,3 +1,4 @@
+using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -7,16 +8,10 @@ using Terraria.ModLoader;
 namespace EndlessContinuum.Content.Items.Armor;
 
 [AutoloadEquip(EquipType.Head)]
-public class AeriumMask : ModItem
+class AeriumMask : ModItem
 {
 	public override string Texture => ECAssets.ItemsPath + "AeriumMask";
-	public override void SetDefaults()
-	{
-		Item.Size = new Vector2(20, 20);
-		Item.value = Item.sellPrice(gold: 3);
-		Item.rare = ItemRarityID.Pink;
-		Item.defense = 13;
-	}
+	public override void SetDefaults() => QuickItem.QuickArmorItem(this, ItemRarityID.Pink, new Vector2(20, 20), Item.sellPrice(0, 3, 0, 0), 13);
 	public override void UpdateEquip(Player player)
 	{
 		player.GetAttackSpeed(DamageClass.Melee) += 0.10f;
@@ -33,16 +28,10 @@ public class AeriumMask : ModItem
 }
 
 [AutoloadEquip(EquipType.Body)]
-public class AeriumBreastplate : ModItem
+class AeriumBreastplate : ModItem
 {
 	public override string Texture => ECAssets.ItemsPath + "AeriumBreastplate";
-	public override void SetDefaults()
-	{
-		Item.Size = new Vector2(26, 18);
-		Item.value = Item.sellPrice(gold: 5);
-		Item.rare = ItemRarityID.Pink;
-		Item.defense = 16;
-	}
+	public override void SetDefaults() => QuickItem.QuickArmorItem(this, ItemRarityID.Pink, new Vector2(26, 18), Item.sellPrice(0, 5, 0, 0), 16);
 	public override void UpdateEquip(Player player)
 	{
 		player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
@@ -52,16 +41,10 @@ public class AeriumBreastplate : ModItem
 }
 
 [AutoloadEquip(EquipType.Legs)]
-public class AeriumLeggings : ModItem
+class AeriumLeggings : ModItem
 {
 	public override string Texture => ECAssets.ItemsPath + "AeriumLeggings";
-	public override void SetDefaults()
-	{
-		Item.Size = new Vector2(22, 16);
-		Item.value = Item.sellPrice(gold: 2);
-		Item.rare = ItemRarityID.Pink;
-		Item.defense = 12;
-	}
+	public override void SetDefaults() => QuickItem.QuickArmorItem(this, ItemRarityID.Pink, new Vector2(22, 16), Item.sellPrice(0, 2, 0, 0), 12);
 	public override void UpdateEquip(Player player)
 	{
 		player.GetAttackSpeed(DamageClass.Melee) += 0.10f;

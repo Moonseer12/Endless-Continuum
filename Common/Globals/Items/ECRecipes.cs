@@ -16,5 +16,12 @@ class ECRecipes : ModSystem
     {
         AnyAdamantiteBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.AdamantiteBar)}", ItemID.AdamantiteBar, ItemID.TitaniumBar);
         RecipeGroup.RegisterGroup("EndlessContinuum:AnyAdamantiteBar", AnyAdamantiteBar);
+
+        if (RecipeGroup.recipeGroupIDs.ContainsKey("Wood"))
+        {
+            int index = RecipeGroup.recipeGroupIDs["Wood"];
+            RecipeGroup group0 = RecipeGroup.recipeGroups[index];
+            group0.ValidItems.Add(ModContent.ItemType<Content.Items.Tiles.Myrdenwood>());
+        }
     }
 }

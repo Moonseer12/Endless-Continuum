@@ -14,7 +14,6 @@ namespace EndlessContinuum.Content.Items.Weapons;
 class ThunderStrike : ModItem
 {
     public override string Texture => ECAssets.ItemsPath + "ThunderStrike";
-    public override void SetStaticDefaults() => this.SetResearch();
     public override void SetDefaults()
     {
         Item.Size = new Vector2(28, 30);
@@ -204,7 +203,7 @@ class ThunderHit : ModProjectile
 
 public struct ThunderTrail
 {
-	private static VertexStrip _vertexStrip = new VertexStrip();
+	private readonly static VertexStrip _vertexStrip = new VertexStrip();
 	public void Draw(Projectile proj)
 	{
 		MiscShaderData miscShaderData = GameShaders.Misc["RainbowRod"];

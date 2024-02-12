@@ -1,52 +1,33 @@
+using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace EndlessContinuum.Content.Items.Tiles
-{
-    class SurgestoneOre : ModItem
-    {
-        public override string Texture => ECAssets.ItemsPath + "SurgestoneOre";
-        public override void SetStaticDefaults() => this.SetResearchBlock();
-        public override void SetDefaults()
-        {
-            Item.DefaultToPlaceableTile(ModContent.TileType<SurgestoneOreTile>(), 0);
-            Item.width = 16;
-            Item.height = 16;
-            Item.maxStack = Item.CommonMaxStack;
-            Item.rare = ItemRarityID.Pink;
-        }
-    }
+namespace EndlessContinuum.Content.Items.Tiles;
 
-    class SurgestoneOreTile : ModTile
+class SurgestoneOre : ModItem
+{
+    public override string Texture => ECAssets.ItemsPath + "SurgestoneOre";
+    public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Pink, new Vector2(16, 16), 0, ModContent.TileType<SurgestoneOreTile>());
+}
+
+class SurgestoneOreTile : ModTile
+{
+    public override string Texture => ECAssets.TilesPath + "SurgestoneOreTile";
+    public override void SetStaticDefaults()
     {
-        public override string Texture => ECAssets.TilesPath + "SurgestoneOreTile";
-        public override void SetStaticDefaults()
-        {
-            Main.tileSolid[Type] = true;
-            Main.tileSpelunker[Type] = true;
-            Main.tileOreFinderPriority[Type] = 410;
-            //Main.tileLighted[Type] = true;
-            Main.tileMerge[Type][ModContent.TileType<MyrdendirtTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<MyrdenstoneTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<MyrdenwoodTile>()] = true;
-            Main.tileMerge[Type][ModContent.TileType<AeriumOreTile>()] = true;
-            Main.tileBlockLight[Type] = true;
-            TileID.Sets.Ore[Type] = true;
-            HitSound = SoundID.Tink;
-            MinPick = 200;
-            MineResist = 3f;
-            LocalizedText name = CreateMapEntryName();
-            AddMapEntry(new Color(69, 196, 162), name);
-        }
-        public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
-        /*public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
-        {
-            r = 0.50f;
-            g = 0.98f;
-            b = 0.64f;
-        }*/
+        QuickTile.QuickOreTile(this, DustID.CursedTorch, SoundID.Tink, 5f, 200, 410, new Color(69, 196, 162));
+        //Main.tileLighted[Type] = true;
+        QuickTile.QuickTileMerge(this, ModContent.TileType<MyrdendirtTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<MyrdenstoneTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<MyrdenwoodTile>());
+        QuickTile.QuickTileMerge(this, ModContent.TileType<AeriumOreTile>());
     }
+    public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+    /*public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+    {
+        r = 0.50f;
+        g = 0.98f;
+        b = 0.64f;
+    }*/
 }
