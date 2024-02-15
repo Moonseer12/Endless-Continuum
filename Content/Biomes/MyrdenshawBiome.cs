@@ -13,6 +13,8 @@ class MyrdenshawBiome : ModBiome
 {
 	public override int Music => MusicID.SpaceDay;
 	public override string BestiaryIcon => ECAssets.MiscPath + "Myrdenshaw_Icon";
+	public override int BiomeTorchItemType => ModContent.ItemType<Items.Tiles.MyrdenTorch>();
+	public override int BiomeCampfireItemType => ModContent.ItemType<Items.Tiles.MyrdenCampfire>();
 	public override string MapBackground => BackgroundPath;
 	public override string BackgroundPath => ECAssets.MiscPath + "MyrdenshawMapBackground";
 	public override bool IsBiomeActive(Player player) => SubworldSystem.IsActive<Subworlds.Myrdenshaw>();

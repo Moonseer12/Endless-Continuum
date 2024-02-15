@@ -16,8 +16,8 @@ class Myrdenflyer : ModNPC
 	public override void SetDefaults()
 	{
 		QuickNPC.QuickEnemyNPC(this, new Vector2(66, 30), 550, 70, 6, .65f, SoundID.NPCHit1, SoundID.NPCDeath4, 14, 1, true, Item.sellPrice(0, 0, 5, 0));
-		//Banner = NPC.type;
-		//BannerItem = ModContent.ItemType<Items.Tiles.MyrdenflyerBanner>();
+		Banner = NPC.type;
+		BannerItem = ModContent.ItemType<Items.Tiles.MyrdenflyerBanner>();
 		SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.MyrdenshawBiome>().Type };
 	}
 	/*public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)

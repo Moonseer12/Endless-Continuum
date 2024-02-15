@@ -186,6 +186,12 @@ abstract class QuickItem
         item.Item.UseSound = SoundID.Item1;
         item.Item.ResearchUnlockCount = 1;
     }
+    public static void QuickTorchItem(ModItem item, int rare, Vector2 size, int sell, int tile, bool water)
+    {
+        QuickDefaultItem(item, rare, size, sell);
+        item.Item.DefaultToTorch(tile, 0, water);
+        item.Item.ResearchUnlockCount = 100;
+    }
     public static void QuickVanityItem(ModItem item, int rare, Vector2 size, int sell)
     {
         QuickDefaultItem(item, rare, size, sell);
@@ -198,5 +204,28 @@ abstract class QuickItem
         QuickDefaultItem(item, rare, size, sell);
         item.Item.DefaultToPlaceableWall((ushort)wall);
         item.Item.ResearchUnlockCount = 400;
+    }
+    public static void QuickYoyoItem(ModItem item, int rare, Vector2 size, int sell, int damage, float knockback, int projectile, int velocity, int range)
+    {
+        QuickDefaultItem(item, rare, size, sell);
+        item.Item.maxStack = 1;
+        item.Item.damage = damage;
+        item.Item.autoReuse = true;
+        item.Item.useTurn = true;
+        item.Item.useTime = 25;
+        item.Item.knockBack = knockback;
+        item.Item.DamageType = DamageClass.Melee;
+        item.Item.useStyle = ItemUseStyleID.Shoot;
+        item.Item.useAnimation = 25;
+        item.Item.UseSound = SoundID.Item1;
+        item.Item.shoot = projectile;
+        item.Item.shootSpeed = velocity;
+        item.Item.channel = true;
+        item.Item.noMelee = true;
+        item.Item.noUseGraphic = true;
+        item.Item.ResearchUnlockCount = 1;
+        ItemID.Sets.Yoyo[item.Item.type] = true;
+        ItemID.Sets.GamepadExtraRange[item.Item.type] = range;
+        ItemID.Sets.GamepadSmartQuickReach[item.Item.type] = true;
     }
 }

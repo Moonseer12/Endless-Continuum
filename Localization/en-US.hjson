@@ -280,6 +280,11 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MyrdenCampfire: {
+				DisplayName: Myrden Campfire
+				Tooltip: Life regen is increased when near a campfire
+			}
+
 			Myrdencore: {
 				DisplayName: Myrdencore
 				Tooltip: ""
@@ -293,6 +298,11 @@ Mods: {
 			MyrdendirtWall: {
 				DisplayName: Myrdendirt Wall
 				Tooltip: ""
+			}
+
+			MyrdenflyerBanner: {
+				DisplayName: Myrdenflyer Banner
+				Tooltip: Nearby players get a bonus against: Myrdenflyer
 			}
 
 			MyrdenflyJar: {
@@ -327,6 +337,11 @@ Mods: {
 
 			MyrdenstoneWall: {
 				DisplayName: Myrdenstone Wall
+				Tooltip: ""
+			}
+
+			MyrdenTorch: {
+				DisplayName: Myrden Torch
 				Tooltip: ""
 			}
 
@@ -427,6 +442,11 @@ Mods: {
 				Tooltip: Fires a spread of leaves
 			}
 
+			Myrdenring: {
+				DisplayName: Myrdenring
+				Tooltip: Fires a ring of leaves
+			}
+
 			MyrdenwoodBow: {
 				DisplayName: Myrdenwood Bow
 				Tooltip: ""
@@ -471,6 +491,7 @@ Mods: {
 			Myrdenleaf.DisplayName: Myrdenleaf
 			Thunder.DisplayName: Thunder
 			ThunderHit.DisplayName: Strike
+			MyrdenringProj.DisplayName: Myrdenring Proj
 		}
 
 		Tiles: {
