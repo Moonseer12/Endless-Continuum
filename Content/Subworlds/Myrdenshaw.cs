@@ -17,7 +17,6 @@ namespace EndlessContinuum.Content.Subworlds
         {
             Item.width = 24;
             Item.height = 24;
-            Item.maxStack = 30;
             Item.noUseGraphic = true;
             Item.useAnimation = 45;
             Item.useTime = 45;
@@ -158,7 +157,7 @@ namespace EndlessContinuum.Content.Subworlds
                         if (Main.rand.NextBool(3))
                             WorldGen.PlaceObject(i, j - 1, ModContent.TileType<Items.Tiles.Myrdengrass>(), true, Main.rand.Next(10));
                         if (Main.rand.NextBool(7))
-                            WorldGen.PlaceObject(i, j - 1, ModContent.TileType<Items.Tiles.MyrdenTallGrass>(), true, Main.rand.Next(4));
+                            WorldGen.PlaceObject(i, j - 1, ModContent.TileType<Items.Tiles.MyrdenTallGrass>(), true, Main.rand.Next(8));
                     }
                 }
             }

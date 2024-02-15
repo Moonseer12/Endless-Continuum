@@ -66,6 +66,27 @@ abstract class QuickItem
         item.Item.shootSpeed = velocity;
         item.Item.ResearchUnlockCount = 1;
     }
+    public static void QuickCritterItem(ModItem item, int rare, Vector2 size, int sell, int npc, int use, int bait)
+    {
+        QuickDefaultItem(item, rare, size, sell);
+        item.Item.makeNPC = npc;
+        item.Item.noMelee = true;
+        item.Item.consumable = true;
+        item.Item.autoReuse = true;
+        item.Item.noUseGraphic = true;
+        item.Item.useTime = use;
+        item.Item.useAnimation = use;
+        item.Item.useStyle = ItemUseStyleID.Swing;
+        item.Item.bait = bait;
+        item.Item.ResearchUnlockCount = 5;
+    }
+    public static void QuickFoodItem(ModItem item, int width, int height, int buff, int duration, int rare, int sell)
+    {
+        item.Item.DefaultToFood(width, height, buff, duration);
+        item.Item.rare = rare;
+        item.Item.value = sell;
+        item.Item.ResearchUnlockCount = 5;
+    }
     public static void QuickFurnitureItem(ModItem item, int rare, Vector2 size, int sell, int tile)
     {
         QuickBlockItem(item, rare, size, sell, tile);
@@ -122,6 +143,23 @@ abstract class QuickItem
         item.Item.buffType = buff;
         item.Item.buffTime = buffTime;
         item.Item.ResearchUnlockCount = 20;
+    }
+    public static void QuickProjectileSwordItem(ModItem item, int rare, Vector2 size, int sell, int damage, int use, float knockback, int projectile, int velocity)
+    {
+        QuickDefaultItem(item, rare, size, sell);
+        item.Item.maxStack = 1;
+        item.Item.damage = damage;
+        item.Item.autoReuse = true;
+        item.Item.useTurn = true;
+        item.Item.useTime = use;
+        item.Item.knockBack = knockback;
+        item.Item.DamageType = DamageClass.Melee;
+        item.Item.useStyle = ItemUseStyleID.Swing;
+        item.Item.useAnimation = use;
+        item.Item.UseSound = SoundID.Item1;
+        item.Item.shoot = projectile;
+        item.Item.shootSpeed = velocity;
+        item.Item.ResearchUnlockCount = 1;
     }
     public static void QuickRelicItem(ModItem item, Vector2 size, int tile)
     {

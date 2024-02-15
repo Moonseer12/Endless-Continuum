@@ -9,7 +9,7 @@ namespace EndlessContinuum.Content.Items.Tiles;
 class MyrdenTallGrass : ModTile
 {
     public override string Texture => ECAssets.TilesPath + "MyrdenTallGrass";
-    public override void SetStaticDefaults() => QuickTile.QuickGrassTallTile(this, DustID.t_Honey, ModContent.TileType<MyrdengrassTile>(), 4);
+    public override void SetStaticDefaults() => QuickTile.QuickGrassTallTile(this, DustID.t_Honey, ModContent.TileType<MyrdengrassTile>(), 8);
     public override void NumDust(int i, int j, bool fail, ref int num) => num = 10;
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {

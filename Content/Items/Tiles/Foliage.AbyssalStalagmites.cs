@@ -8,7 +8,7 @@ namespace EndlessContinuum.Content.Items.Tiles
     class AbyssalStalagmites : ModTile
     {
         public override string Texture => ECAssets.TilesPath + "AbyssalStalagmites";
-        public override void SetStaticDefaults() => QuickTile.QuickGrassShortTile(this, DustID.Cobalt, ModContent.TileType<AbyssalStoneTile>(), 7);
+        public override void SetStaticDefaults() => QuickTile.QuickStalagmiteTile(this, DustID.Cobalt, ModContent.TileType<AbyssalStoneTile>());
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
         {
             if ((i % 4) < 5)

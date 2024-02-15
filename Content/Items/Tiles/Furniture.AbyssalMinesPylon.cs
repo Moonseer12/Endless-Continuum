@@ -10,7 +10,7 @@ namespace EndlessContinuum.Content.Items.Tiles;
 class AbyssalMinesPylon : ModItem
 {
 	public override string Texture => ECAssets.ItemsPath + "AbyssalMinesPylon";
-	public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Green, new Vector2(32, 42), 0, ModContent.TileType<AbyssalMinesPylonTile>());
+	public override void SetDefaults() => QuickItem.QuickFurnitureItem(this, ItemRarityID.Green, new Vector2(32, 42), 0, ModContent.TileType<AbyssalMinesPylonTile>());
 }
 
 class AbyssalMinesPylonTile : QuickDimensionPylonTile

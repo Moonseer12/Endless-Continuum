@@ -10,7 +10,7 @@ namespace EndlessContinuum.Content.Items.Tiles;
 class MyrdenshawPylon : ModItem
 {
 	public override string Texture => ECAssets.ItemsPath + "MyrdenshawPylon";
-	public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Pink, new Vector2(32, 42), 0, ModContent.TileType<MyrdenshawPylonTile>());
+	public override void SetDefaults() => QuickItem.QuickFurnitureItem(this, ItemRarityID.Pink, new Vector2(32, 42), 0, ModContent.TileType<MyrdenshawPylonTile>());
 }
 
 class MyrdenshawPylonTile : QuickDimensionPylonTile

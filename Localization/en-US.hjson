@@ -7,6 +7,8 @@ Mods: {
 			'''
 
 		Bestiary: {
+			#Critters
+			Myrdenfly: Small creatures that hide in trees and are very vulnerable.
 			#Enemies
 			GnawyrmHead: A wyvern-like creature with an insatiable apetite.
 			Lighthunter: A small ringlight searching for light to bring back to its homeworld.
@@ -82,6 +84,12 @@ Mods: {
 					'''
 			}
 
+			#Critters
+			MyrdenflyItem: {
+				DisplayName: Myrdenfly
+				Tooltip: ""
+			}
+
 			#Materials
 			Lightspores: {
 				DisplayName: Lightspores
@@ -107,6 +115,17 @@ Mods: {
 			MyrdenshawPylonCrystal: {
 				DisplayName: Myrdenshaw Pylon Crystal
 				Tooltip: Can be placed on an Myrdenshaw Pylon Base to complete it, allowing access to Myrdenshaw
+			}
+
+			#Potions
+			Lightberry: {
+				DisplayName: Lightberry
+				Tooltip: Medium improvements to all stats
+			}
+
+			Myrdereen: {
+				DisplayName: Myrdereen
+				Tooltip: Medium improvements to all stats
 			}
 
 			#Test
@@ -276,6 +295,11 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MyrdenflyJar: {
+				DisplayName: Myrdenfly Jar
+				Tooltip: ""
+			}
+
 			MyrdengrassSeeds: {
 				DisplayName: Myrdengrass Seeds
 				Tooltip: ""
@@ -398,6 +422,11 @@ Mods: {
 					'''
 			}
 
+			Myrdenblade: {
+				DisplayName: Myrdenblade
+				Tooltip: Fires a spread of leaves
+			}
+
 			MyrdenwoodBow: {
 				DisplayName: Myrdenwood Bow
 				Tooltip: ""
@@ -415,6 +444,8 @@ Mods: {
 		}
 
 		NPCs: {
+			#Critters
+			Myrdenfly.DisplayName: "{$Mods.EndlessContinuum.Items.MyrdenflyItem.DisplayName}"
 			#Enemies
 			GnawyrmBody.DisplayName: Gnawyrm
 			GnawyrmHead.DisplayName: Gnawyrm
@@ -437,6 +468,7 @@ Mods: {
 			AeriumSigilCrystal.DisplayName: "{$Mods.EndlessContinuum.Projectiles.AeriumCrystal.DisplayName}"
 			AeriumWhipProjectile.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumWhip.DisplayName}"
 			LighthunterWing.DisplayName: ""
+			Myrdenleaf.DisplayName: Myrdenleaf
 			Thunder.DisplayName: Thunder
 			ThunderHit.DisplayName: Strike
 		}
@@ -449,6 +481,7 @@ Mods: {
 			MyrdenSapling.MapEntry: Myrdenshaw Sapling
 			#Furniture
 			AbyssalMinesPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.AbyssalMinesPylon.DisplayName}"
+			MyrdenflyJarTile.MapEntry: Critter Cage
 			MyrdenshawPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenshawPylon.DisplayName}"
 			SoulForgeTile.MapEntry: "{$Mods.EndlessContinuum.Items.SoulForge.DisplayName}"
 		}

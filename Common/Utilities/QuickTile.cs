@@ -70,6 +70,26 @@ abstract class QuickTile
 		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 		tile.AdjTiles = new int[] { TileID.Bookcases };
 	}
+	public static void QuickCritterJarTile(ModTile tile)
+	{
+		tile.AnimationFrameHeight = 36;
+		tile.DustType = DustID.Glass;
+		Main.tileLighted[tile.Type] = false;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileObjectData.newTile.UsesCustomCanPlace = true;
+		TileObjectData.newTile.Width = 2;
+		TileObjectData.newTile.Height = 2;
+		TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
+		TileObjectData.newTile.CoordinateWidth = 16;
+		TileObjectData.newTile.CoordinatePadding = 2;
+		TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table | AnchorType.SolidTile | AnchorType.SolidWithTop, TileObjectData.newTile.Width, 0);
+		TileObjectData.newTile.Origin = new Point16(0, 1);
+		TileObjectData.addTile(tile.Type);
+		LocalizedText name = tile.CreateMapEntryName();
+		tile.AddMapEntry(new Color(200, 200, 200), name);
+	}
 	public static void QuickFoliageTile(ModTile tile, int dust, SoundStyle hitSound, bool lavaDeath, int width, int height, int[] coordinateHeights, bool horizontal, int styleRange, int grass, Point16 origin)
 	{
 		tile.DustType = dust;

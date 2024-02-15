@@ -71,8 +71,8 @@ class MyrdengrassTile : ModTile
         }
         if (!tileAbove.HasTile && Main.tile[i, j].HasTile && Main.rand.NextBool(15) && Main.tile[i, j - 1].LiquidAmount == 0)
         {
-            WorldGen.PlaceObject(i, j - 1, ModContent.TileType<MyrdenTallGrass>(), true, Main.rand.Next(4));
-            NetMessage.SendObjectPlacement(-1, i, j - 1, ModContent.TileType<MyrdenTallGrass>(), Main.rand.Next(4), 0, -1, -1);
+            WorldGen.PlaceObject(i, j - 1, ModContent.TileType<MyrdenTallGrass>(), true, Main.rand.Next(8));
+            NetMessage.SendObjectPlacement(-1, i, j - 1, ModContent.TileType<MyrdenTallGrass>(), Main.rand.Next(8), 0, -1, -1);
         }
         if (!tileAbove.HasTile && Main.tile[i, j].HasTile && Main.rand.NextBool(20) && Main.tile[i, j - 1].LiquidAmount == 0)
         {

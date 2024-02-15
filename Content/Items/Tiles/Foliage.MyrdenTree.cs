@@ -42,11 +42,23 @@ class MyrdenTree : ModTree
         SpecialGroupMaximumSaturationValue = 1f
     };
     public override void SetStaticDefaults() => GrowsOnTileId = new int[1] { ModContent.TileType<MyrdengrassTile>() };
-    public override bool Shake(int x, int y, ref bool createLeaves) => false;
+    public override bool Shake(int x, int y, ref bool createLeaves)
+    {
+        if (Main.rand.NextBool(10))
+        {
+            if (Main.rand.NextBool(2))
+                Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16, ModContent.ItemType<Items.Potions.Lightberry>());
+            else if (Main.rand.NextBool(2))
+                Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16, ModContent.ItemType<Items.Potions.Myrdereen>());
+            else
+                NPC.NewNPC(WorldGen.GetItemSource_FromTreeShake(x, y), x * 16 + 8, (y - 1) * 16, ModContent.NPCType<NPCs.Critters.Myrdenfly>());
+        }
+        return false;
+    }
     public override void SetTreeFoliageSettings(Tile tile, ref int xoffset, ref int treeFrame, ref int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight)
     {
-        topTextureFrameWidth = 112;
-        topTextureFrameHeight = 60;
+        topTextureFrameWidth = 66;
+        topTextureFrameHeight = 62;
     }
     public override Asset<Texture2D> GetTexture() => ModContent.Request<Texture2D>("EndlessContinuum/Assets/Textures/Tiles/MyrdenTree");
     public override int SaplingGrowthType(ref int style)

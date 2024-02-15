@@ -17,7 +17,6 @@ namespace EndlessContinuum.Content.Subworlds
         {
             Item.width = 24;
             Item.height = 24;
-            Item.maxStack = 30;
             Item.noUseGraphic = true;
             Item.useAnimation = 45;
             Item.useTime = 45;
