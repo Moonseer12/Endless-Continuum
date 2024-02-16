@@ -1,12 +1,8 @@
 ﻿using EndlessContinuum.Common.Utilities;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
 using Terraria;
-using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
 
 namespace EndlessContinuum.Content.Items.Tiles;
 

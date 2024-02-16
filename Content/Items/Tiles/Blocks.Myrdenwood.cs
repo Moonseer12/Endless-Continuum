@@ -9,7 +9,11 @@ class Myrdenwood : ModItem
 {
     public override string Texture => ECAssets.ItemsPath + "Myrdenwood";
     public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Pink, new Vector2(16, 16), 0, ModContent.TileType<MyrdenwoodTile>());
-    public override void AddRecipes() => CreateRecipe().AddIngredient<MyrdenwoodWall>(4).Register();
+    public override void AddRecipes()
+    {
+        CreateRecipe().AddIngredient<MyrdenwoodPlatform>(2).Register();
+        CreateRecipe().AddIngredient<MyrdenwoodWall>(4).Register();
+    }
 }
 
 class MyrdenwoodTile : ModTile

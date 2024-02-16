@@ -1,10 +1,13 @@
 Mods: {
 	EndlessContinuum: {
-		ArmorSetBonus.AeriumMask:
-			'''
-			You will swap between a melee and summoner mode once every minute
-			Being in one mode will increase the damage from that mode, but decrease damage from the other
-			'''
+		ArmorSetBonus: {
+			AeriumMask:
+				'''
+				You will swap between a melee and summoner mode once every minute
+				Being in one mode will increase the damage from that mode, but decrease damage from the other
+				'''
+			MyrdenwoodHelmet: 1 defense
+		}
 
 		Bestiary: {
 			#Critters
@@ -82,6 +85,21 @@ Mods: {
 					10% increased melee speed
 					Increases your max number of minions by 1
 					'''
+			}
+
+			MyrdenwoodBreastplate: {
+				DisplayName: Myrdenwood Breastplate
+				Tooltip: ""
+			}
+
+			MyrdenwoodGreaves: {
+				DisplayName: Myrdenwood Greaves
+				Tooltip: ""
+			}
+
+			MyrdenwoodHelmet: {
+				DisplayName: Myrdenwood Helmet
+				Tooltip: ""
 			}
 
 			#Critters
@@ -300,6 +318,11 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MyrdenfeederBanner: {
+				DisplayName: Myrdenfeeder Banner
+				Tooltip: Nearby players get a bonus against: Myrdenfeeder
+			}
+
 			MyrdenflyerBanner: {
 				DisplayName: Myrdenflyer Banner
 				Tooltip: Nearby players get a bonus against: Myrdenflyer
@@ -347,6 +370,11 @@ Mods: {
 
 			Myrdenwood: {
 				DisplayName: Myrdenwood
+				Tooltip: ""
+			}
+
+			MyrdenwoodPlatform: {
+				DisplayName: Myrdenwood Platform
 				Tooltip: ""
 			}
 
@@ -489,9 +517,11 @@ Mods: {
 			AeriumWhipProjectile.DisplayName: "{$Mods.EndlessContinuum.Items.AeriumWhip.DisplayName}"
 			LighthunterWing.DisplayName: ""
 			Myrdenleaf.DisplayName: Myrdenleaf
+			MyrdenringProj.DisplayName: "{$Mods.EndlessContinuum.Items.Myrdenring.DisplayName}"
 			Thunder.DisplayName: Thunder
 			ThunderHit.DisplayName: Strike
-			MyrdenringProj.DisplayName: Myrdenring Proj
+			#Hostile
+			Lightspore.DisplayName: Lightspore
 		}
 
 		Tiles: {

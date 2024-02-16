@@ -25,6 +25,8 @@ abstract class QuickTile
 {
 	public static void QuickBarTile(ModTile tile)
 	{
+		tile.AdjTiles = new int[] { TileID.MetalBars };
+		tile.HitSound = SoundID.Tink;
 		Main.tileSolid[tile.Type] = true;
 		Main.tileSolidTop[tile.Type] = true;
 		Main.tileFrameImportant[tile.Type] = true;
@@ -33,8 +35,6 @@ abstract class QuickTile
 		TileObjectData.newTile.StyleHorizontal = true;
 		TileObjectData.newTile.LavaDeath = false;
 		TileObjectData.addTile(tile.Type);
-		tile.AdjTiles = new int[] { TileID.MetalBars };
-		tile.HitSound = SoundID.Tink;
 		tile.AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
 	}
 	public static void QuickBeamTile(ModTile tile, int dust, SoundStyle hitSound, Color mapColor)
@@ -243,8 +243,34 @@ abstract class QuickTile
 		LocalizedText name = tile.CreateMapEntryName();
 		tile.AddMapEntry(mapColor, name);
 	}
+	public static void QuickPlatformTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.Platforms };
+		tile.DustType = dust;
+		Main.tileLighted[tile.Type] = true;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileSolidTop[tile.Type] = true;
+		Main.tileSolid[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileTable[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileID.Sets.Platforms[tile.Type] = true;
+		TileID.Sets.DisableSmartCursor[tile.Type] = true;
+		TileObjectData.newTile.CoordinateHeights = new[] { 16 };
+		TileObjectData.newTile.CoordinateWidth = 16;
+		TileObjectData.newTile.CoordinatePadding = 2;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.StyleMultiplier = 27;
+		TileObjectData.newTile.StyleWrapLimit = 27;
+		TileObjectData.newTile.UsesCustomCanPlace = false;
+		TileObjectData.newTile.LavaDeath = true;
+		TileObjectData.addTile(tile.Type);
+		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+		tile.AddMapEntry(mapColor);
+	}
 	public static void QuickSaplingTile(ModTile tile, int dust, int grass, int amount, Color mapColor)
 	{
+		tile.AdjTiles = new int[] { TileID.Saplings };
 		tile.DustType = dust;
 		tile.HitSound = SoundID.Grass;
 		Main.tileFrameImportant[tile.Type] = true;
@@ -270,7 +296,6 @@ abstract class QuickTile
 		TileObjectData.addTile(tile.Type);
 		LocalizedText name = tile.CreateMapEntryName();
 		tile.AddMapEntry(mapColor, name);
-		tile.AdjTiles = new int[] { TileID.Saplings };
 	}
 	public static void QuickStalagmiteTile(ModTile tile, int dust, int stone)
 	{
@@ -286,6 +311,7 @@ abstract class QuickTile
 	}
 	public static void QuickTableTile(ModTile tile, int dust, Color mapColor)
 	{
+		tile.AdjTiles = new int[] { TileID.Tables };
 		tile.DustType = dust;
 		Main.tileTable[tile.Type] = true;
 		Main.tileSolidTop[tile.Type] = true;
@@ -302,7 +328,6 @@ abstract class QuickTile
 		TileObjectData.addTile(tile.Type);
 		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 		tile.AddMapEntry(mapColor, Language.GetText("MapObject.Table"));
-		tile.AdjTiles = new int[] { TileID.Tables };
 	}
 	public static void QuickTileMerge(ModTile tile, int mergeTile)
 	{
@@ -311,7 +336,6 @@ abstract class QuickTile
 	}
 	public static void QuickTorchTile(ModTile tile, int dust, bool waterTorch)
 	{
-		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 		tile.AdjTiles = new int[] { TileID.Torches };
 		tile.DustType = dust;
 		Main.tileLighted[tile.Type] = true;
@@ -334,6 +358,7 @@ abstract class QuickTile
 			TileObjectData.newTile.LavaPlacement = LiquidPlacement.Allowed;
 		}
 		TileObjectData.addTile(tile.Type);
+		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 		tile.AddMapEntry(new Color(200, 200, 200), Language.GetText("ItemName.Torch"));
 	}
 	public static void QuickTrophyTile(ModTile tile)
