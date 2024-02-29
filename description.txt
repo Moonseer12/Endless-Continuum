@@ -1,1 +1,7 @@
-Endless Continuum is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Endless Continuum is a mod focused primarily on adding in new dimensions to explore as well as expanding on non-boss gameplay.
+
+The mod currently features:
+-4 new dimensions throughout the game.
+-4 large new dungeons for each subworld, with a boss at the end.
+-1 new event, with a miniboss at the end.
+-Many new enemies throughout every world.

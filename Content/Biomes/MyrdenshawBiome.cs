@@ -66,9 +66,10 @@ class MyrdenshawNPC : GlobalNPC
 		if (spawnInfo.Player.InModBiome<MyrdenshawBiome>())
 		{
 			pool.Clear();
-			pool.Add(ModContent.NPCType<NPCs.Enemies.Myrdenfeeder>(), 0.2f);
-			pool.Add(ModContent.NPCType<NPCs.Critters.Myrdenfly>(), 0.2f);
-			pool.Add(ModContent.NPCType<NPCs.Enemies.Myrdenflyer>(), 0.2f);
+			pool.Add(ModContent.NPCType<NPCs.Enemies.GnawyrmHead>(), 0.8f);
+			pool.Add(ModContent.NPCType<NPCs.Enemies.Myrdenfeeder>(), 1f);
+			pool.Add(ModContent.NPCType<NPCs.Critters.Myrdenfly>(), 1f);
+			pool.Add(ModContent.NPCType<NPCs.Enemies.Myrdenflyer>(), 1f);
 		}
 	}
 }

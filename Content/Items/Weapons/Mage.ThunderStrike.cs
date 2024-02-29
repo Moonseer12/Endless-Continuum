@@ -114,7 +114,7 @@ class Thunder : ModProjectile
 			}
 			frameCounter = 0;
 			float num827 = Projectile.velocity.Length();
-			UnifiedRandom unifiedRandom = new UnifiedRandom((int)Projectile.ai[1]);
+			var unifiedRandom = new UnifiedRandom((int)Projectile.ai[1]);
 			int num828 = 0;
 			Vector2 spinningpoint7 = -Vector2.UnitY;
 			while (true)
@@ -203,7 +203,7 @@ class ThunderHit : ModProjectile
 
 public struct ThunderTrail
 {
-	private readonly static VertexStrip _vertexStrip = new VertexStrip();
+	private readonly static VertexStrip _vertexStrip = new();
 	public void Draw(Projectile proj)
 	{
 		MiscShaderData miscShaderData = GameShaders.Misc["RainbowRod"];

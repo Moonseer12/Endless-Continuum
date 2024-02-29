@@ -11,6 +11,7 @@ class Myrdenwood : ModItem
     public override void SetDefaults() => QuickItem.QuickBlockItem(this, ItemRarityID.Pink, new Vector2(16, 16), 0, ModContent.TileType<MyrdenwoodTile>());
     public override void AddRecipes()
     {
+        CreateRecipe().AddIngredient<MyrdenwoodFence>(4).Register();
         CreateRecipe().AddIngredient<MyrdenwoodPlatform>(2).Register();
         CreateRecipe().AddIngredient<MyrdenwoodWall>(4).Register();
     }

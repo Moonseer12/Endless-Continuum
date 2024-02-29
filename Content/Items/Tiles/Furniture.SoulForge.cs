@@ -11,7 +11,7 @@ namespace EndlessContinuum.Content.Items.Tiles;
 class SoulForge : ModItem
 {
     public override string Texture => ECAssets.ItemsPath + "SoulForge";
-    public override void SetDefaults() => QuickItem.QuickFurnitureItem(this, ItemRarityID.Pink, new Vector2(48, 48), Item.sellPrice(0, 25, 0, 0), ModContent.TileType<SoulForgeTile>());
+    public override void SetDefaults() => QuickItem.QuickFurnitureItem(this, ItemRarityID.Pink, new Vector2(30, 32), Item.sellPrice(0, 25, 0, 0), ModContent.TileType<SoulForgeTile>());
 }
 
 class SoulForgeTile : ModTile

@@ -37,6 +37,20 @@ abstract class QuickTile
 		TileObjectData.addTile(tile.Type);
 		tile.AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
 	}
+	public static void QuickBathtubTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.Bathtubs };
+		tile.DustType = dust;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
+		TileObjectData.newTile.Origin = new Point16(1, 1);
+		TileObjectData.newTile.DrawYOffset = 2;
+		TileObjectData.addTile(tile.Type);
+		LocalizedText name = tile.CreateMapEntryName();
+		tile.AddMapEntry(mapColor, name);
+	}
 	public static void QuickBeamTile(ModTile tile, int dust, SoundStyle hitSound, Color mapColor)
 	{
 		tile.DustType = dust;
@@ -58,6 +72,7 @@ abstract class QuickTile
 	}
 	public static void QuickBookcaseTile(ModTile tile, int dust, Color mapColor)
 	{
+		tile.AdjTiles = new int[] { TileID.Bookcases };
 		tile.DustType = dust;
 		Main.tileSolidTop[tile.Type] = true;
 		Main.tileFrameImportant[tile.Type] = true;
@@ -69,7 +84,6 @@ abstract class QuickTile
 		LocalizedText name = tile.CreateMapEntryName();
 		tile.AddMapEntry(mapColor, name);
 		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-		tile.AdjTiles = new int[] { TileID.Bookcases };
 	}
 	public static void QuickCritterJarTile(ModTile tile)
 	{
@@ -243,6 +257,20 @@ abstract class QuickTile
 		LocalizedText name = tile.CreateMapEntryName();
 		tile.AddMapEntry(mapColor, name);
 	}
+	public static void QuickPianoTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.Pianos };
+		tile.DustType = dust;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
+		TileObjectData.newTile.Origin = new Point16(1, 1);
+		TileObjectData.newTile.DrawYOffset = 2;
+		TileObjectData.addTile(tile.Type);
+		LocalizedText name = tile.CreateMapEntryName();
+		tile.AddMapEntry(mapColor, name);
+	}
 	public static void QuickPlatformTile(ModTile tile, int dust, Color mapColor)
 	{
 		tile.AdjTiles = new int[] { TileID.Platforms };
@@ -297,6 +325,36 @@ abstract class QuickTile
 		LocalizedText name = tile.CreateMapEntryName();
 		tile.AddMapEntry(mapColor, name);
 	}
+	public static void QuickSinkTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.Sinks };
+		tile.DustType = dust;
+		TileID.Sets.CountsAsWaterSource[tile.Type] = true;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
+		TileObjectData.newTile.Origin = new Point16(0, 1);
+		TileObjectData.newTile.DrawYOffset = 2;
+		TileObjectData.addTile(tile.Type);
+		tile.AddMapEntry(mapColor, Language.GetText("MapObject.Sink"));
+	}
+	public static void QuickSofaTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.Benches };
+		tile.DustType = dust;
+		Main.tileFrameImportant[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
+		TileObjectData.newTile.Origin = new Point16(1, 1);
+		TileObjectData.newTile.DrawYOffset = 2;
+		TileObjectData.addTile(tile.Type);
+		LocalizedText name = tile.CreateMapEntryName();
+		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+		tile.AddMapEntry(mapColor, name);
+	}
 	public static void QuickStalagmiteTile(ModTile tile, int dust, int stone)
 	{
 		tile.DustType = dust;
@@ -321,10 +379,9 @@ abstract class QuickTile
 		TileID.Sets.DisableSmartCursor[tile.Type] = true;
 		TileID.Sets.IgnoredByNpcStepUp[tile.Type] = true;
 		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
-		TileObjectData.newTile.Width = 3;
-		TileObjectData.newTile.Height = 2;
+		TileObjectData.newTile.Origin = new Point16(1, 1);
+		TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
 		TileObjectData.newTile.StyleHorizontal = true;
-		TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 		TileObjectData.addTile(tile.Type);
 		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 		tile.AddMapEntry(mapColor, Language.GetText("MapObject.Table"));
@@ -390,6 +447,23 @@ abstract class QuickTile
 		Main.wallHouse[tile.Type] = house;
 		tile.AddMapEntry(mapColor);
 	}
+	public static void QuickWorkbenchTile(ModTile tile, int dust, Color mapColor)
+	{
+		tile.AdjTiles = new int[] { TileID.WorkBenches };
+		tile.DustType = dust;
+		Main.tileTable[tile.Type] = true;
+		Main.tileSolidTop[tile.Type] = true;
+		Main.tileNoAttach[tile.Type] = true;
+		Main.tileLavaDeath[tile.Type] = true;
+		Main.tileFrameImportant[tile.Type] = true;
+		TileID.Sets.DisableSmartCursor[tile.Type] = true;
+		TileID.Sets.IgnoredByNpcStepUp[tile.Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
+		TileObjectData.newTile.CoordinateHeights = new[] { 18 };
+		TileObjectData.addTile(tile.Type);
+		tile.AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+		tile.AddMapEntry(mapColor, Language.GetText("ItemName.WorkBench"));
+	}
 }
 
 abstract class QuickBannerTile : ModTile
@@ -414,6 +488,95 @@ abstract class QuickBannerTile : ModTile
 		{
 			Main.SceneMetrics.hasBanner = true;
 			Main.SceneMetrics.NPCBannerBuff[BannerEnemy] = true;
+		}
+	}
+}
+
+abstract class QuickBedTile : ModTile
+{
+	protected abstract int BedDust { get; }
+	protected abstract int BedItem { get; }
+	protected abstract Color BedMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Beds };
+		DustType = BedDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.CanBeSleptIn[Type] = true;
+		TileID.Sets.InteractibleByNPCs[Type] = true;
+		TileID.Sets.IsValidSpawnPoint[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
+		TileObjectData.newTile.CoordinatePaddingFix = new Point16(0, -2);
+		TileObjectData.addTile(Type);
+		AddMapEntry(BedMapColor, Language.GetText("ItemName.Bed"));
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+	}
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+	public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
+	{
+		width = 2;
+		height = 2;
+	}
+	public override void ModifySleepingTargetInfo(int i, int j, ref TileRestingInfo info)
+	{
+		info.VisualOffset.Y += 4f;
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = 1;
+	public override bool RightClick(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		Tile tile = Framing.GetTileSafely(i, j);
+		int spawnX = i - (tile.TileFrameX / 18) + (tile.TileFrameX >= 72 ? 5 : 2);
+		int spawnY = j + 2;
+		if (tile.TileFrameY % 38 != 0)
+		{
+			spawnY--;
+		}
+		if (!Player.IsHoveringOverABottomSideOfABed(i, j))
+		{
+			if (player.IsWithinSnappngRangeToTile(i, j, PlayerSleepingHelper.BedSleepingMaxDistance))
+			{
+				player.GamepadEnableGrappleCooldown();
+				player.sleeping.StartSleeping(player, i, j);
+			}
+		}
+		else
+		{
+			player.FindSpawn();
+			if (player.SpawnX == spawnX && player.SpawnY == spawnY)
+			{
+				player.RemoveSpawn();
+				Main.NewText(Language.GetTextValue("Game.SpawnPointRemoved"), byte.MaxValue, 240, 20);
+			}
+			else if (Player.CheckSpawn(spawnX, spawnY))
+			{
+				player.ChangeSpawn(spawnX, spawnY);
+				Main.NewText(Language.GetTextValue("Game.SpawnPointSet"), byte.MaxValue, 240, 20);
+			}
+		}
+		return true;
+	}
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		if (!Player.IsHoveringOverABottomSideOfABed(i, j))
+		{
+			if (player.IsWithinSnappngRangeToTile(i, j, PlayerSleepingHelper.BedSleepingMaxDistance))
+			{
+				player.noThrow = 2;
+				player.cursorItemIconEnabled = true;
+				player.cursorItemIconID = ItemID.SleepingIcon;
+			}
+		}
+		else
+		{
+			player.noThrow = 2;
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = BedItem;
 		}
 	}
 }
@@ -458,7 +621,7 @@ abstract class QuickCampfireTile : ModTile
 		return true;
 	}
 	public override void HitWire(int i, int j) => ToggleTile(i, j);
-	public void ToggleTile(int i, int j)
+	public static void ToggleTile(int i, int j)
 	{
 		Tile tile = Main.tile[i, j];
 		int topX = i - tile.TileFrameX % 54 / 18;
@@ -537,8 +700,8 @@ abstract class QuickCampfireTile : ModTile
 			return;
 		if (tile.TileFrameY < 36)
 		{
-			Color color = new Color(255, 255, 255, 0);
-			Vector2 zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
+			var color = new Color(255, 255, 255, 0);
+			var zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
 			if (Main.drawToScreen)
 				zero = Vector2.Zero;
 			int width = 16;
@@ -550,8 +713,164 @@ abstract class QuickCampfireTile : ModTile
 			int addFrY = 0;
 			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref frameX, ref frameY);
 			TileLoader.SetAnimationFrame(Type, i, j, ref addFrX, ref addFrY);
-			Rectangle drawRectangle = new Rectangle(tile.TileFrameX, tile.TileFrameY + addFrY, 16, 16);
+			var drawRectangle = new Rectangle(tile.TileFrameX, tile.TileFrameY + addFrY, 16, 16);
 			spriteBatch.Draw(flameTexture.Value, new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y + offsetY) + zero, drawRectangle, color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+		}
+	}
+}
+
+abstract class QuickCandelabraTile : ModTile
+{
+	protected abstract int CandelabraDust { get; }
+	protected abstract int CandelabraItem { get; }
+	protected abstract Color CandelabraMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Candelabras };
+		DustType = CandelabraItem;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileLighted[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+		TileObjectData.newTile.WaterDeath = true;
+		TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.DrawYOffset = 2;
+		TileObjectData.newTile.StyleLineSkip = 2;
+		TileObjectData.addTile(Type);
+		LocalizedText name = CreateMapEntryName();
+		AddMapEntry(CandelabraMapColor, name);
+		RegisterItemDrop(CandelabraItem);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+	}
+	public override void HitWire(int i, int j)
+	{
+		int left = i - Main.tile[i, j].TileFrameX / 18 % 2;
+		int top = j - Main.tile[i, j].TileFrameY / 18 % 2;
+		for (int x = left; x < left + 2; x++)
+		{
+			for (int y = top; y < top + 2; y++)
+			{
+				if (Main.tile[x, y].TileFrameX >= 36)
+					Main.tile[x, y].TileFrameX -= 36;
+				else
+					Main.tile[x, y].TileFrameX += 36;
+			}
+		}
+		if (Wiring.running)
+		{
+			Wiring.SkipWire(left, top);
+			Wiring.SkipWire(left, top + 1);
+			Wiring.SkipWire(left + 1, top);
+			Wiring.SkipWire(left + 1, top + 1);
+		}
+		NetMessage.SendTileSquare(-1, left, top + 1, 2);
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		if (tile.TileFrameX < 36)
+		{
+			r = 0.7f;
+			g = 0.7f;
+			b = 0.7f;
+		}
+	}
+	public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		Vector2 zero = new(Main.offScreenRange, Main.offScreenRange);
+		if (Main.drawToScreen)
+			zero = Vector2.Zero;
+		int height = tile.TileFrameY == 36 ? 18 : 16;
+		ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
+		Color color = new(100, 100, 100, 0);
+		for (int k = 0; k < 7; k++)
+		{
+			float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
+			float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>(Texture + "_Glow").Value, new Vector2((i * 16) - (int)Main.screenPosition.X + xx, (j * 16) - (int)Main.screenPosition.Y + yy) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, height), color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+		}
+	}
+}
+
+abstract class QuickCandleTile : ModTile
+{
+	protected abstract int CandleDust { get; }
+	protected abstract int CandleItem { get; }
+	protected abstract Color CandleMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Candles };
+		DustType = CandleDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		Main.tileLighted[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
+		TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.WaterDeath = true;
+		TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.StyleLineSkip = 2;
+		TileObjectData.addTile(Type);
+		LocalizedText name = CreateMapEntryName();
+		AddMapEntry(CandleMapColor, name);
+		RegisterItemDrop(CandleItem);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+	}
+	public override void HitWire(int i, int j)
+	{
+		if (Main.tile[i, j].TileFrameX >= 18)
+			Main.tile[i, j].TileFrameX -= 18;
+		else
+			Main.tile[i, j].TileFrameX += 18;
+	}
+	public override bool RightClick(int i, int j)
+	{
+		if (Main.tile[i, j].TileFrameX >= 18)
+			Main.tile[i, j].TileFrameX -= 18;
+		else
+			Main.tile[i, j].TileFrameX += 18;
+		return true;
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+		player.cursorItemIconID = CandleItem;
+	}
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		if (tile.TileFrameX < 18)
+		{
+			r = 0.7f;
+			g = 0.7f;
+			b = 0.7f;
+		}
+	}
+	public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		Vector2 zero = new(Main.offScreenRange, Main.offScreenRange);
+		if (Main.drawToScreen)
+		{
+			zero = Vector2.Zero;
+		}
+		int height = tile.TileFrameY == 36 ? 18 : 16;
+		ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
+		Color color = new(100, 100, 100, 0);
+		for (int k = 0; k < 7; k++)
+		{
+			float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
+			float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>(Texture + "_Glow").Value, new Vector2((i * 16) - (int)Main.screenPosition.X + xx, (j * 16) - (int)Main.screenPosition.Y + yy) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, height), color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 		}
 	}
 }
@@ -564,8 +883,8 @@ abstract class QuickChairTile : ModTile
 	public const int NextStyleHeight = 40;
 	public override void SetStaticDefaults()
 	{
-		DustType = ChairDust;
 		AdjTiles = new int[] { TileID.Chairs };
+		DustType = ChairDust;
 		Main.tileFrameImportant[Type] = true;
 		Main.tileNoAttach[Type] = true;
 		Main.tileLavaDeath[Type] = true;
@@ -618,6 +937,309 @@ abstract class QuickChairTile : ModTile
 		if (Main.tile[i, j].TileFrameX / 18 < 1)
 			Main.LocalPlayer.cursorItemIconReversed = true;
 	}
+}
+
+abstract class QuickChandelierTile : ModTile
+{
+	protected abstract int ChandelierDust { get; }
+	protected abstract int ChandelierItem { get; }
+	protected abstract Color ChandelierMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Chandeliers };
+		DustType = ChandelierDust;
+		Main.tileLighted[Type] = true;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
+		TileObjectData.newTile.Origin = new Point16(1, 0);
+		TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, 1, 1);
+		TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
+		TileObjectData.newTile.WaterDeath = true;
+		TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.StyleLineSkip = 2;
+		TileObjectData.newTile.LavaDeath = true;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.addTile(Type);
+		AddMapEntry(ChandelierMapColor, Language.GetText("MapObject.Chandelier"));
+		RegisterItemDrop(ChandelierItem);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+	}
+	public override void HitWire(int i, int j)
+	{
+		int left = i - Main.tile[i, j].TileFrameX / 18 % 3;
+		int top = j - Main.tile[i, j].TileFrameY / 18 % 3;
+		for (int x = left; x < left + 3; x++)
+		{
+			for (int y = top; y < top + 3; y++)
+			{
+				if (Main.tile[x, y].TileFrameX >= 54)
+					Main.tile[x, y].TileFrameX -= 54;
+				else
+					Main.tile[x, y].TileFrameX += 54;
+			}
+		}
+		if (Wiring.running)
+		{
+			Wiring.SkipWire(left, top);
+			Wiring.SkipWire(left, top + 1);
+			Wiring.SkipWire(left + 1, top);
+			Wiring.SkipWire(left + 1, top + 1);
+		}
+		NetMessage.SendTileSquare(-1, left, top + 1, 2);
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num)
+	{
+		num = fail ? 1 : 3;
+	}
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		if (tile.TileFrameX < 36)
+		{
+			r = 0.7f;
+			g = 0.7f;
+			b = 0.7f;
+		}
+	}
+	public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		Vector2 zero = new(Main.offScreenRange, Main.offScreenRange);
+		if (Main.drawToScreen)
+		{
+			zero = Vector2.Zero;
+		}
+		int height = tile.TileFrameY == 36 ? 18 : 16;
+		ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
+		Color color = new(100, 100, 100, 0);
+		for (int k = 0; k < 7; k++)
+		{
+			float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
+			float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>(Texture + "_Glow").Value, new Vector2((i * 16) - (int)Main.screenPosition.X + xx, (j * 16) - (int)Main.screenPosition.Y + yy) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, height), color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+		}
+	}
+}
+
+abstract class QuickChestTile : ModTile
+{
+	protected abstract int ChestDust { get; }
+	protected abstract int ChestItem { get; }
+	protected abstract Color ChestMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Containers };
+		DustType = ChestDust;
+		Main.tileSpelunker[Type] = true;
+		Main.tileContainer[Type] = true;
+		Main.tileShine2[Type] = true;
+		Main.tileShine[Type] = 1200;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileOreFinderPriority[Type] = 500;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.BasicChest[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileID.Sets.AvoidedByNPCs[Type] = true;
+		TileID.Sets.InteractibleByNPCs[Type] = true;
+		TileID.Sets.IsAContainer[Type] = true;
+		TileID.Sets.FriendlyFairyCanLureTo[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+		TileObjectData.newTile.Origin = new Point16(0, 1);
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
+		TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
+		TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
+		TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock, TileID.Boulder, TileID.BouncyBoulder, TileID.LifeCrystalBoulder, TileID.RollingCactus };
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.LavaDeath = false;
+		TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+		TileObjectData.addTile(Type);
+		LocalizedText name = CreateMapEntryName();
+		AddMapEntry(ChestMapColor, name, MapChestName);
+	}
+	public override LocalizedText DefaultContainerName(int frameX, int frameY) => this.GetLocalization("MapEntry");
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+	public override bool IsLockedChest(int i, int j) => false;
+	public static string MapChestName(string name, int i, int j)
+	{
+		int left = i;
+		int top = j;
+		Tile tile = Main.tile[i, j];
+		if (tile.TileFrameX % 36 != 0)
+			left--;
+		if (tile.TileFrameY != 0)
+			top--;
+		int chest = Chest.FindChest(left, top);
+		if (chest < 0)
+			return Language.GetTextValue("LegacyChestType.0");
+
+		if (Main.chest[chest].name == "")
+			return name;
+		return name + ": " + Main.chest[chest].name;
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = 1;
+	public override void KillMultiTile(int i, int j, int frameX, int frameY) => Chest.DestroyChest(i, j);
+	public override bool RightClick(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		Tile tile = Main.tile[i, j];
+		Main.mouseRightRelease = false;
+		int left = i;
+		int top = j;
+		if (tile.TileFrameX % 36 != 0)
+			left--;
+		if (tile.TileFrameY != 0)
+			top--;
+		player.CloseSign();
+		player.SetTalkNPC(-1);
+		Main.npcChatCornerItem = 0;
+		Main.npcChatText = "";
+		if (Main.editChest)
+		{
+			SoundEngine.PlaySound(SoundID.MenuTick);
+			Main.editChest = false;
+			Main.npcChatText = string.Empty;
+		}
+		if (player.editedChestName)
+		{
+			NetMessage.SendData(MessageID.SyncPlayerChest, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f);
+			player.editedChestName = false;
+		}
+		if (Main.netMode == NetmodeID.MultiplayerClient)
+		{
+			if (left == player.chestX && top == player.chestY && player.chest != -1)
+			{
+				player.chest = -1;
+				Recipe.FindRecipes();
+				SoundEngine.PlaySound(SoundID.MenuClose);
+			}
+			else
+			{
+				NetMessage.SendData(MessageID.RequestChestOpen, -1, -1, null, left, top);
+				Main.stackSplit = 600;
+			}
+		}
+		else
+		{
+			int chest = Chest.FindChest(left, top);
+			if (chest != -1)
+			{
+				Main.stackSplit = 600;
+				if (chest == player.chest)
+				{
+					player.chest = -1;
+					SoundEngine.PlaySound(SoundID.MenuClose);
+				}
+				else
+				{
+					SoundEngine.PlaySound(player.chest < 0 ? SoundID.MenuOpen : SoundID.MenuTick);
+					player.OpenChest(left, top, chest);
+				}
+				Recipe.FindRecipes();
+			}
+		}
+		return true;
+	}
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		Tile tile = Main.tile[i, j];
+		int left = i;
+		int top = j;
+		if (tile.TileFrameX % 36 != 0)
+			left--;
+		if (tile.TileFrameY != 0)
+			top--;
+
+		int chest = Chest.FindChest(left, top);
+		player.cursorItemIconID = -1;
+		if (chest < 0)
+			player.cursorItemIconText = Language.GetTextValue("LegacyChestType.0");
+		else
+		{
+			string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
+			player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : defaultName;
+			if (player.cursorItemIconText == defaultName)
+			{
+				player.cursorItemIconID = ChestItem;
+				player.cursorItemIconText = "";
+			}
+		}
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+	}
+	public override void MouseOverFar(int i, int j)
+	{
+		MouseOver(i, j);
+		Player player = Main.LocalPlayer;
+		if (player.cursorItemIconText == "")
+		{
+			player.cursorItemIconEnabled = false;
+			player.cursorItemIconID = 0;
+		}
+	}
+}
+
+abstract class QuickClockTile : ModTile
+{
+	protected abstract int ClockDust { get; }
+	protected abstract Color ClockMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.GrandfatherClocks };
+		DustType = ClockDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileID.Sets.Clock[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
+		TileObjectData.newTile.Height = 5;
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 16, 16, 16, 16 };
+		TileObjectData.newTile.Origin = new Point16(0, 4);
+		TileObjectData.addTile(Type);
+		AddMapEntry(ClockMapColor, Language.GetText("ItemName.GrandfatherClock"));
+	}
+	public override bool RightClick(int x, int y)
+	{
+		string text = "AM";
+		double time = Main.time;
+		if (!Main.dayTime)
+		{
+			time += 54000.0;
+		}
+		time = time / 86400.0 * 24.0;
+		time = time - 7.5 - 12.0;
+		if (time < 0.0)
+		{
+			time += 24.0;
+		}
+		if (time >= 12.0)
+		{
+			text = "PM";
+		}
+		int intTime = (int)time;
+		double deltaTime = time - intTime;
+		deltaTime = (int)(deltaTime * 60.0);
+		string text2 = string.Concat(deltaTime);
+		if (deltaTime < 10.0)
+		{
+			text2 = "0" + text2;
+		}
+		if (intTime > 12)
+		{
+			intTime -= 12;
+		}
+		if (intTime == 0)
+		{
+			intTime = 12;
+		}
+		Main.NewText($"Time: {intTime}:{text2} {text}", 255, 240, 20);
+		return true;
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
 }
 
 abstract class QuickDimensionPylonTile : ModPylon
@@ -697,6 +1319,336 @@ abstract class QuickDimensionPylonTile : ModPylon
 }
 
 public sealed class SimplePylonTileEntity : TEModdedPylon { }
+
+abstract class QuickDoorClosed : ModTile
+{
+	protected abstract int DoorDust { get; }
+	protected abstract int DoorItem { get; }
+	protected abstract Color DoorMapColor { get; }
+	protected abstract int DoorOpen { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.ClosedDoor };
+		DustType = DoorDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileBlockLight[Type] = true;
+		Main.tileSolid[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileID.Sets.NotReallySolid[Type] = true;
+		TileID.Sets.DrawsWalls[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileID.Sets.OpenDoorID[Type] = DoorOpen;
+		TileObjectData.newTile.Width = 1;
+		TileObjectData.newTile.Height = 3;
+		TileObjectData.newTile.Origin = new Point16(0, 0);
+		TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+		TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+		TileObjectData.newTile.UsesCustomCanPlace = true;
+		TileObjectData.newTile.LavaDeath = true;
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 16, 16 };
+		TileObjectData.newTile.CoordinateWidth = 16;
+		TileObjectData.newTile.CoordinatePadding = 2;
+		TileObjectData.newTile.StyleLineSkip = 3;
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(0, 1);
+		TileObjectData.addAlternate(0);
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(0, 2);
+		TileObjectData.addAlternate(0);
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+		AddMapEntry(DoorMapColor, Language.GetText("MapObject.Door"));
+	}
+	public override bool Slope(int i, int j) => false;
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = 1;
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+		player.cursorItemIconID = DoorItem;
+	}
+}
+
+abstract class QuickDoorOpen : ModTile
+{
+	protected abstract int DoorClosed { get; }
+	protected abstract int DoorDust { get; }
+	protected abstract int DoorItem { get; }
+	protected abstract Color DoorMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.OpenDoor };
+		DustType = DoorDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileSolid[Type] = false;
+		Main.tileLavaDeath[Type] = true;
+		Main.tileNoSunLight[Type] = true;
+		TileID.Sets.HousingWalls[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileID.Sets.CloseDoorID[Type] = DoorClosed;
+		TileObjectData.newTile.Width = 2;
+		TileObjectData.newTile.Height = 3;
+		TileObjectData.newTile.Origin = new Point16(0, 0);
+		TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile, 1, 0);
+		TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 0);
+		TileObjectData.newTile.UsesCustomCanPlace = true;
+		TileObjectData.newTile.LavaDeath = true;
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 16, 16 };
+		TileObjectData.newTile.CoordinateWidth = 16;
+		TileObjectData.newTile.CoordinatePadding = 2;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.StyleMultiplier = 2;
+		TileObjectData.newTile.StyleWrapLimit = 2;
+		TileObjectData.newTile.Direction = TileObjectDirection.PlaceRight;
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(0, 1);
+		TileObjectData.addAlternate(0);
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(0, 2);
+		TileObjectData.addAlternate(0);
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(1, 0);
+		TileObjectData.newAlternate.AnchorTop = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
+		TileObjectData.addAlternate(1);
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(1, 1);
+		TileObjectData.newAlternate.AnchorTop = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
+		TileObjectData.addAlternate(1);
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Origin = new Point16(1, 2);
+		TileObjectData.newAlternate.AnchorTop = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.SolidTile, 1, 1);
+		TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
+		TileObjectData.addAlternate(1);
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+		RegisterItemDrop(DoorItem, 0);
+		AddMapEntry(DoorMapColor, Language.GetText("MapObject.Door"));
+	}
+	public override bool Slope(int i, int j) => false;
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = 1;
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+		player.cursorItemIconID = DoorItem;
+	}
+}
+
+abstract class QuickDresserTile : ModTile
+{
+	protected abstract int DresserDust { get; }
+	protected abstract int DresserItem { get; }
+	protected abstract Color DresserMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Dressers };
+		DustType = DresserDust;
+		Main.tileSolidTop[Type] = true;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileTable[Type] = true;
+		Main.tileContainer[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileID.Sets.BasicDresser[Type] = true;
+		TileID.Sets.AvoidedByNPCs[Type] = true;
+		TileID.Sets.InteractibleByNPCs[Type] = true;
+		TileID.Sets.IsAContainer[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
+		TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
+		TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
+		TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock, TileID.Boulder, TileID.BouncyBoulder, TileID.LifeCrystalBoulder, TileID.RollingCactus };
+		TileObjectData.newTile.LavaDeath = false;
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+		AddMapEntry(DresserMapColor, CreateMapEntryName(), MapChestName);
+	}
+	public override LocalizedText DefaultContainerName(int frameX, int frameY) => CreateMapEntryName();
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+	public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
+	{
+		width = 3;
+		height = 1;
+		extraY = 0;
+	}
+	public override bool RightClick(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		int left = Main.tile[i, j].TileFrameX / 18;
+		left %= 3;
+		left = i - left;
+		int top = j - Main.tile[i, j].TileFrameY / 18;
+		if (Main.tile[i, j].TileFrameY == 0)
+		{
+			Main.CancelClothesWindow(true);
+			Main.mouseRightRelease = false;
+			player.CloseSign();
+			player.SetTalkNPC(-1);
+			Main.npcChatCornerItem = 0;
+			Main.npcChatText = "";
+			if (Main.editChest)
+			{
+				SoundEngine.PlaySound(SoundID.MenuTick);
+				Main.editChest = false;
+				Main.npcChatText = string.Empty;
+			}
+			if (player.editedChestName)
+			{
+				NetMessage.SendData(MessageID.SyncPlayerChest, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f);
+				player.editedChestName = false;
+			}
+			if (Main.netMode == NetmodeID.MultiplayerClient)
+			{
+				if (left == player.chestX && top == player.chestY && player.chest != -1)
+				{
+					player.chest = -1;
+					Recipe.FindRecipes();
+					SoundEngine.PlaySound(SoundID.MenuClose);
+				}
+				else
+				{
+					NetMessage.SendData(MessageID.RequestChestOpen, -1, -1, null, left, top);
+					Main.stackSplit = 600;
+				}
+			}
+			else
+			{
+				player.piggyBankProjTracker.Clear();
+				player.voidLensChest.Clear();
+				int chestIndex = Chest.FindChest(left, top);
+				if (chestIndex != -1)
+				{
+					Main.stackSplit = 600;
+					if (chestIndex == player.chest)
+					{
+						player.chest = -1;
+						Recipe.FindRecipes();
+						SoundEngine.PlaySound(SoundID.MenuClose);
+					}
+					else if (chestIndex != player.chest && player.chest == -1)
+					{
+						player.OpenChest(left, top, chestIndex);
+						SoundEngine.PlaySound(SoundID.MenuOpen);
+					}
+					else
+					{
+						player.OpenChest(left, top, chestIndex);
+						SoundEngine.PlaySound(SoundID.MenuTick);
+					}
+					Recipe.FindRecipes();
+				}
+			}
+		}
+		else
+		{
+			Main.playerInventory = false;
+			player.chest = -1;
+			Recipe.FindRecipes();
+			player.SetTalkNPC(-1);
+			Main.npcChatCornerItem = 0;
+			Main.npcChatText = "";
+			Main.interactedDresserTopLeftX = left;
+			Main.interactedDresserTopLeftY = top;
+			Main.OpenClothesWindow();
+		}
+		return true;
+	}
+	public void MouseOverNearAndFarSharedLogic(Player player, int i, int j)
+	{
+		Tile tile = Main.tile[i, j];
+		int left = i;
+		int top = j;
+		left -= tile.TileFrameX % 54 / 18;
+		if (tile.TileFrameY % 36 != 0)
+		{
+			top--;
+		}
+		int chestIndex = Chest.FindChest(left, top);
+		player.cursorItemIconID = -1;
+		if (chestIndex < 0)
+		{
+			player.cursorItemIconText = Language.GetTextValue("LegacyDresserType.0");
+		}
+		else
+		{
+			string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
+			if (Main.chest[chestIndex].name != "")
+			{
+				player.cursorItemIconText = Main.chest[chestIndex].name;
+			}
+			else
+			{
+				player.cursorItemIconText = defaultName;
+			}
+			if (player.cursorItemIconText == defaultName)
+			{
+				player.cursorItemIconID = DresserItem;
+				player.cursorItemIconText = "";
+			}
+		}
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+	}
+	public override void MouseOverFar(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		MouseOverNearAndFarSharedLogic(player, i, j);
+		if (player.cursorItemIconText == "")
+		{
+			player.cursorItemIconEnabled = false;
+			player.cursorItemIconID = 0;
+		}
+	}
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		MouseOverNearAndFarSharedLogic(player, i, j);
+		if (Main.tile[i, j].TileFrameY > 0)
+		{
+			player.cursorItemIconID = ItemID.FamiliarShirt;
+			player.cursorItemIconText = "";
+		}
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override void KillMultiTile(int i, int j, int frameX, int frameY) => Chest.DestroyChest(i, j);
+	public static string MapChestName(string name, int i, int j)
+	{
+		int left = i;
+		int top = j;
+		Tile tile = Main.tile[i, j];
+		if (tile.TileFrameX % 36 != 0)
+		{
+			left--;
+		}
+		if (tile.TileFrameY != 0)
+		{
+			top--;
+		}
+		int chest = Chest.FindChest(left, top);
+		if (chest < 0)
+		{
+			return Language.GetTextValue("LegacyDresserType.0");
+		}
+		if (Main.chest[chest].name == "")
+		{
+			return name;
+		}
+		return name + ": " + Main.chest[chest].name;
+	}
+}
 
 abstract class QuickHerbTile : ModTile
 {
@@ -809,6 +1761,163 @@ abstract class QuickHerbTile : ModTile
 	}
 }
 
+abstract class QuickLampTile : ModTile
+{
+	protected abstract int LampDust { get; }
+	protected abstract int LampItem { get; }
+	protected abstract Color LampMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		DustType = LampDust;
+		Main.tileLighted[Type] = true;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileWaterDeath[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style1xX);
+		TileObjectData.newTile.Height = 3;
+		TileObjectData.newTile.Origin = new Point16(0, 2);
+		TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+		TileObjectData.newTile.UsesCustomCanPlace = true;
+		TileObjectData.newTile.LavaDeath = true;
+		TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
+		TileObjectData.newTile.CoordinateWidth = 16;
+		TileObjectData.newTile.CoordinatePadding = 2;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.WaterDeath = true;
+		TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.StyleLineSkip = 2;
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		RegisterItemDrop(LampItem);
+		AddMapEntry(LampMapColor, Language.GetText("MapObject.FloorLamp"));
+	}
+	public override void HitWire(int i, int j)
+	{
+		int left = i - Main.tile[i, j].TileFrameX / 18 % 1;
+		int top = j - Main.tile[i, j].TileFrameY / 18 % 3;
+		for (int x = left; x < left + 1; x++)
+		{
+			for (int y = top; y < top + 3; y++)
+			{
+				if (Main.tile[x, y].TileFrameX >= 18)
+					Main.tile[x, y].TileFrameX -= 18;
+				else
+					Main.tile[x, y].TileFrameX += 18;
+			}
+		}
+		if (Wiring.running)
+		{
+			Wiring.SkipWire(left, top);
+			Wiring.SkipWire(left, top + 1);
+			Wiring.SkipWire(left, top + 2);
+		}
+		NetMessage.SendTileSquare(-1, left, top + 1, 2);
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		if (tile.TileFrameX < 18)
+		{
+			r = 0.8f;
+			g = 0.6f;
+			b = 0.4f;
+		}
+	}
+	public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		Vector2 zero = new(Main.offScreenRange, Main.offScreenRange);
+		if (Main.drawToScreen)
+			zero = Vector2.Zero;
+		int height = tile.TileFrameY == 36 ? 18 : 16;
+		ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
+		Color color = new(100, 100, 100, 0);
+		for (int k = 0; k < 7; k++)
+		{
+			float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
+			float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>(Texture + "_Glow").Value, new Vector2((i * 16) - (int)Main.screenPosition.X + xx, (j * 16) - (int)Main.screenPosition.Y + yy) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, height), color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+		}
+	}
+}
+
+abstract class QuickLanternTile : ModTile
+{
+	protected abstract int LanternDust { get; }
+	protected abstract int LanternItem { get; }
+	protected abstract Color LanternMapColor { get; }
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.HangingLanterns };
+		DustType = LanternDust;
+		Main.tileLighted[Type] = true;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
+		TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newTile.WaterDeath = true;
+		TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newTile.StyleLineSkip = 2;
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		RegisterItemDrop(LanternItem);
+		AddMapEntry(LanternMapColor, Language.GetText("MapObject.Lantern"));
+	}
+	public override void HitWire(int i, int j)
+	{
+		int left = i - Main.tile[i, j].TileFrameX / 18 % 1;
+		int top = j - Main.tile[i, j].TileFrameY / 18 % 2;
+		for (int x = left; x < left + 1; x++)
+		{
+			for (int y = top; y < top + 2; y++)
+			{
+				if (Main.tile[x, y].TileFrameX >= 18)
+					Main.tile[x, y].TileFrameX -= 18;
+				else
+					Main.tile[x, y].TileFrameX += 18;
+			}
+		}
+		if (Wiring.running)
+		{
+			Wiring.SkipWire(left, top);
+			Wiring.SkipWire(left, top + 1);
+		}
+		NetMessage.SendTileSquare(-1, left, top + 1, 2);
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		if (tile.TileFrameX < 18)
+		{
+			r = 0.8f;
+			g = 0.6f;
+			b = 0.4f;
+		}
+	}
+	public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		Vector2 zero = new(Main.offScreenRange, Main.offScreenRange);
+		if (Main.drawToScreen)
+			zero = Vector2.Zero;
+		int height = tile.TileFrameY == 36 ? 18 : 16;
+		ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
+		Color color = new(100, 100, 100, 0);
+		for (int k = 0; k < 7; k++)
+		{
+			float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
+			float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>(Texture + "_Glow").Value, new Vector2((i * 16) - (int)Main.screenPosition.X + xx, (j * 16) - (int)Main.screenPosition.Y + yy) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, height), color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+		}
+	}
+}
+
 abstract class QuickRelicTile : ModTile
 {
 	public const int FrameWidth = 18 * 3;
@@ -862,41 +1971,31 @@ abstract class QuickRelicTile : ModTile
 			Main.instance.TilesRenderer.AddSpecialLegacyPoint(i, j);
 		}
 	}
-
 	public override void SpecialDraw(int i, int j, SpriteBatch spriteBatch)
 	{
-		Vector2 offScreen = new Vector2(Main.offScreenRange);
+		var offScreen = new Vector2(Main.offScreenRange);
 		if (Main.drawToScreen)
 		{
 			offScreen = Vector2.Zero;
 		}
-
-		Point p = new Point(i, j);
+		var p = new Point(i, j);
 		Tile tile = Main.tile[p.X, p.Y];
 		if (tile == null || !tile.HasTile)
 		{
 			return;
 		}
-
 		Texture2D texture = RelicTexture.Value;
-
 		int frameY = tile.TileFrameX / FrameWidth;
 		Rectangle frame = texture.Frame(HorizontalFrames, VerticalFrames, 0, frameY);
-
 		Vector2 origin = frame.Size() / 2f;
 		Vector2 worldPos = p.ToWorldCoordinates(24f, 64f);
-
 		Color color = Lighting.GetColor(p.X, p.Y);
-
 		bool direction = tile.TileFrameY / FrameHeight != 0;
 		SpriteEffects effects = direction ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-
 		const float TwoPi = (float)Math.PI * 2f;
 		float offset = (float)Math.Sin(Main.GlobalTimeWrappedHourly * TwoPi / 5f);
 		Vector2 drawPos = worldPos + offScreen - Main.screenPosition + new Vector2(0f, -40f) + new Vector2(0f, offset * 4f);
-
 		spriteBatch.Draw(texture, drawPos, frame, color, 0f, origin, 1f, effects, 0f);
-
 		float scale = (float)Math.Sin(Main.GlobalTimeWrappedHourly * TwoPi / 2f) * 0.3f + 0.7f;
 		Color effectColor = color;
 		effectColor.A = 0;
@@ -904,6 +2003,97 @@ abstract class QuickRelicTile : ModTile
 		for (float num5 = 0f; num5 < 1f; num5 += 355f / (678f * (float)Math.PI))
 		{
 			spriteBatch.Draw(texture, drawPos + (TwoPi * num5).ToRotationVector2() * (6f + offset * 2f), frame, effectColor, 0f, origin, 1f, effects, 0f);
+		}
+	}
+}
+
+abstract class QuickToiletTile : ModTile
+{
+	protected abstract int ToiletDust { get; }
+	protected abstract int ToiletItem { get; }
+	protected abstract Color ToiletMapColor { get; }
+	public const int NextStyleHeight = 40;
+	public override void SetStaticDefaults()
+	{
+		AdjTiles = new int[] { TileID.Toilets };
+		DustType = ToiletDust;
+		Main.tileFrameImportant[Type] = true;
+		Main.tileNoAttach[Type] = true;
+		Main.tileLavaDeath[Type] = true;
+		TileID.Sets.HasOutlines[Type] = true;
+		TileID.Sets.CanBeSatOnForNPCs[Type] = true;
+		TileID.Sets.CanBeSatOnForPlayers[Type] = true;
+		TileID.Sets.DisableSmartCursor[Type] = true;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2);
+		TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
+		TileObjectData.newTile.CoordinatePaddingFix = new Point16(0, 2);
+		TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
+		TileObjectData.newTile.StyleWrapLimit = 2;
+		TileObjectData.newTile.StyleMultiplier = 2;
+		TileObjectData.newTile.StyleHorizontal = true;
+		TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+		TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
+		TileObjectData.addAlternate(1);
+		TileObjectData.addTile(Type);
+		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+		AddMapEntry(ToiletMapColor, Language.GetText("MapObject.Toilet"));
+	}
+	public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
+	public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => settings.player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance);
+	public override void ModifySittingTargetInfo(int i, int j, ref TileRestingInfo info)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		info.TargetDirection = -1;
+		if (tile.TileFrameX != 0)
+		{
+			info.TargetDirection = 1;
+		}
+		info.AnchorTilePosition.X = i;
+		info.AnchorTilePosition.Y = j;
+		if (tile.TileFrameY % NextStyleHeight == 0)
+		{
+			info.AnchorTilePosition.Y++;
+		}
+		if (info.RestingEntity is Player player && player.HasBuff(BuffID.Stinky))
+		{
+			info.VisualOffset = Main.rand.NextVector2Circular(2, 2);
+		}
+	}
+	public override bool RightClick(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		if (player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
+		{
+			player.GamepadEnableGrappleCooldown();
+			player.sitting.SitDown(player, i, j);
+		}
+		return true;
+	}
+	public override void MouseOver(int i, int j)
+	{
+		Player player = Main.LocalPlayer;
+		if (!player.IsWithinSnappngRangeToTile(i, j, PlayerSittingHelper.ChairSittingMaxDistance))
+		{
+			return;
+		}
+		player.noThrow = 2;
+		player.cursorItemIconEnabled = true;
+		player.cursorItemIconID = ToiletItem;
+		if (Main.tile[i, j].TileFrameX / 18 < 1)
+		{
+			player.cursorItemIconReversed = true;
+		}
+	}
+	public override void HitWire(int i, int j)
+	{
+		Tile tile = Framing.GetTileSafely(i, j);
+		int spawnX = i;
+		int spawnY = j - tile.TileFrameY % NextStyleHeight / 18;
+		Wiring.SkipWire(spawnX, spawnY);
+		Wiring.SkipWire(spawnX, spawnY + 1);
+		if (Wiring.CheckMech(spawnX, spawnY, 60))
+		{
+			Projectile.NewProjectile(Wiring.GetProjectileSource(spawnX, spawnY), spawnX * 16 + 8, spawnY * 16 + 12, 0f, 0f, ProjectileID.ToiletEffect, 0, 0f, Main.myPlayer);
 		}
 	}
 }

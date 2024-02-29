@@ -20,7 +20,7 @@ class MyrdenshawPylonTile : QuickDimensionPylonTile
 	protected override bool PylonDimension => SubworldSystem.IsActive<Subworlds.Myrdenshaw>();
 	protected override bool PylonEnter => SubworldSystem.Enter<Subworlds.Myrdenshaw>();
 	protected override int PylonItem => ModContent.ItemType<MyrdenshawPylon>();
-	protected override Color PylonMapColor => new Color(82, 70, 40);
+	protected override Color PylonMapColor => new(82, 70, 40);
 	public override void Load()
 	{
 		crystalTexture = ModContent.Request<Texture2D>("EndlessContinuum/Assets/Textures/Tiles/MyrdenshawPylonTile_Crystal");

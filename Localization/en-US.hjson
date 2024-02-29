@@ -288,6 +288,11 @@ Mods: {
 				Tooltip: ""
 			}
 
+			GnawyrmBanner: {
+				DisplayName: Gnawyrm Banner
+				Tooltip: Nearby players get a bonus against: Gnawyrm
+			}
+
 			Myrdenbrick: {
 				DisplayName: Myrdenbrick
 				Tooltip: ""
@@ -373,8 +378,103 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MyrdenwoodBathtub: {
+				DisplayName: Myrdenwood Bathtub
+				Tooltip: ""
+			}
+
+			MyrdenwoodBed: {
+				DisplayName: Myrdenwood Bed
+				Tooltip: ""
+			}
+
+			MyrdenwoodBookcase: {
+				DisplayName: Myrdenwood Bookcase
+				Tooltip: ""
+			}
+
+			MyrdenwoodCandelabra: {
+				DisplayName: Myrdenwood Candelabra
+				Tooltip: ""
+			}
+
+			MyrdenwoodCandle: {
+				DisplayName: Myrdenwood Candle
+				Tooltip: ""
+			}
+
+			MyrdenwoodChair: {
+				DisplayName: Myrdenwood Chair
+				Tooltip: ""
+			}
+
+			MyrdenwoodChandelier: {
+				DisplayName: Myrdenwood Chandelier
+				Tooltip: ""
+			}
+
+			MyrdenwoodChest: {
+				DisplayName: Myrdenwood Chest
+				Tooltip: ""
+			}
+
+			MyrdenwoodClock: {
+				DisplayName: Myrdenwood Clock
+				Tooltip: ""
+			}
+
+			MyrdenwoodDoor: {
+				DisplayName: Myrdenwood Door
+				Tooltip: ""
+			}
+
+			MyrdenwoodDresser: {
+				DisplayName: Myrdenwood Dresser
+				Tooltip: ""
+			}
+
+			MyrdenwoodFence: {
+				DisplayName: Myrdenwood Fence
+				Tooltip: ""
+			}
+
+			MyrdenwoodLamp: {
+				DisplayName: Myrdenwood Lamp
+				Tooltip: ""
+			}
+
+			MyrdenwoodLantern: {
+				DisplayName: Myrdenwood Lantern
+				Tooltip: ""
+			}
+
+			MyrdenwoodPiano: {
+				DisplayName: Myrdenwood Piano
+				Tooltip: ""
+			}
+
 			MyrdenwoodPlatform: {
 				DisplayName: Myrdenwood Platform
+				Tooltip: ""
+			}
+
+			MyrdenwoodSink: {
+				DisplayName: Myrdenwood Sink
+				Tooltip: ""
+			}
+
+			MyrdenwoodSofa: {
+				DisplayName: Myrdenwood Sofa
+				Tooltip: ""
+			}
+
+			MyrdenwoodTable: {
+				DisplayName: Myrdenwood Table
+				Tooltip: ""
+			}
+
+			MyrdenwoodToilet: {
+				DisplayName: Myrdenwood Toilet
 				Tooltip: ""
 			}
 
@@ -383,9 +483,14 @@ Mods: {
 				Tooltip: ""
 			}
 
+			MyrdenwoodWorkbench: {
+				DisplayName: Myrdenwood Work Bench
+				Tooltip: Used for basic crafting
+			}
+
 			SoulForge: {
 				DisplayName: Soul Forge
-				Tooltip: Used to craft items using holy silver
+				Tooltip: Used to craft items from myrdenshaw
 			}
 
 			SurgestoneBar: {
@@ -534,6 +639,14 @@ Mods: {
 			AbyssalMinesPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.AbyssalMinesPylon.DisplayName}"
 			MyrdenflyJarTile.MapEntry: Critter Cage
 			MyrdenshawPylonTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenshawPylon.DisplayName}"
+			MyrdenwoodBathtubTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodBathtub.DisplayName}"
+			MyrdenwoodBookcaseTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodBookcase.DisplayName}"
+			MyrdenwoodCandelabraTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodCandelabra.DisplayName}"
+			MyrdenwoodCandleTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodCandle.DisplayName}"
+			MyrdenwoodChestTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodChest.DisplayName}"
+			MyrdenwoodDresserTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodDresser.DisplayName}"
+			MyrdenwoodPianoTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodPiano.DisplayName}"
+			MyrdenwoodSofaTile.MapEntry: "{$Mods.EndlessContinuum.Items.MyrdenwoodSofa.DisplayName}"
 			SoulForgeTile.MapEntry: "{$Mods.EndlessContinuum.Items.SoulForge.DisplayName}"
 		}
 	}

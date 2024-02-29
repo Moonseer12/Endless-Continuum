@@ -20,7 +20,7 @@ class AbyssalMinesPylonTile : QuickDimensionPylonTile
 	protected override bool PylonDimension => SubworldSystem.IsActive<Subworlds.AbyssalMines>();
 	protected override bool PylonEnter => SubworldSystem.Enter<Subworlds.AbyssalMines>();
 	protected override int PylonItem => ModContent.ItemType<AbyssalMinesPylon>();
-	protected override Color PylonMapColor => new Color(50, 66, 102);
+	protected override Color PylonMapColor => new(50, 66, 102);
 	public override void Load()
 	{
 		crystalTexture = ModContent.Request<Texture2D>("EndlessContinuum/Assets/Textures/Tiles/AbyssalMinesPylonTile_Crystal");

@@ -17,7 +17,7 @@ class Myrdenfeeder : ModNPC
 	public override string Texture => ECAssets.NPCsPath + "Myrdenfeeder";
 	public override void SetStaticDefaults()
 	{
-		NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+		var drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
 		{
 			CustomTexturePath = ECAssets.MiscPath + "MyrdenfeederBestiary",
 			PortraitScale = 1f,
@@ -42,8 +42,8 @@ class Myrdenfeeder : ModNPC
 		if (!NPC.IsABestiaryIconDummy)
 		{
 			Vector2 end1 = NPC.Center;
-			Vector2 end2 = new Vector2(NPC.ai[0] * 16 + 8, NPC.ai[1] * 16 + 8);
-			Vector2 vector = new Vector2(NPC.position.X + (NPC.width / 2), NPC.position.Y + (NPC.height / 2));
+			var end2 = new Vector2(NPC.ai[0] * 16 + 8, NPC.ai[1] * 16 + 8);
+			var vector = new Vector2(NPC.position.X + (NPC.width / 2), NPC.position.Y + (NPC.height / 2));
 			float rotationX = NPC.ai[0] * 16f + 8f - vector.X;
 			float rotationY = NPC.ai[1] * 16f + 8f - vector.Y;
 			float rotation = (float)Math.Atan2(rotationY, rotationX) - 1.57f;
@@ -60,7 +60,7 @@ class Myrdenfeeder : ModNPC
 					Main.EntitySpriteDraw(texture, end1 + k * direction - Main.screenPosition, null, Lighting.GetColor((int)(drawlight.X / 16), (int)(drawlight.Y / 16)), rotation, new Vector2(8f, 8f), 1f, SpriteEffects.None, 0);
 				}
 			}
-			Vector2 drawOrigin = new Vector2(21, 25);
+			var drawOrigin = new Vector2(21, 25);
 			for (int k = 0; k < NPC.oldPos.Length; k++)
 			{
 				Vector2 drawPos = NPC.oldPos[k] - Main.screenPosition + new Vector2(21, 21) + new Vector2(0f, NPC.gfxOffY);
